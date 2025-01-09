@@ -1,14 +1,14 @@
 <script setup>
-import { computed, onMounted, ref, watch } from "vue";
-import { useElementBounding } from "@vueuse/core";
+import { computed, onMounted, ref, watch } from 'vue';
+import { useElementBounding } from '@vueuse/core';
 
-const baseVideoUrl = "https://vip.udn.com/newmedia/2025/landswindlers/videos";
-const baseImageUrl = "https://vip.udn.com/newmedia/2025/landswindlers/images";
+const baseVideoUrl = 'https://vip.udn.com/newmedia/2025/landswindlers/videos';
+const baseImageUrl = 'https://vip.udn.com/newmedia/2025/landswindlers/images';
 
 // 畫面寬度(不包含滾動軸)
 const containerWidth = ref(document.body.clientWidth);
 // 畫面大小變化時偵測畫面寬度(不包含滾動軸)
-window.addEventListener("resize", () => {
+window.addEventListener('resize', () => {
   containerWidth.value = document.body.clientWidth;
 });
 onMounted(() => {
@@ -19,9 +19,9 @@ onMounted(() => {
 const containerHeight = ref(window.innerHeight);
 
 const deviceType = computed(() => {
-  if (containerWidth.value <= 767) return "mob";
-  if (containerWidth.value <= 1023) return "pad";
-  return "pc";
+  if (containerWidth.value <= 767) return 'mob';
+  if (containerWidth.value <= 1023) return 'pad';
+  return 'pc';
 });
 
 const keyVisual_img = ref();
@@ -140,18 +140,18 @@ const secondImage = ref();
 // });
 /////////////
 onMounted(() => {
-  const emptyContent = document.querySelectorAll(".topic2_gridCard_empty");
+  const emptyContent = document.querySelectorAll('.topic2_gridCard_empty');
   const entries = (entries) => {
     entries.forEach((entry) => {
       if (entry.target === emptyContent[0] && entry.isIntersecting) {
         firstImage.value.style.opacity = 1;
-        floatingText.value.style.display = "none";
+        floatingText.value.style.display = 'none';
       } else if (entry.target === emptyContent[1] && entry.isIntersecting) {
         firstImage.value.style.opacity = 0;
-        floatingText.value.style.display = "none";
+        floatingText.value.style.display = 'none';
       } else if (entry.target === emptyContent[2] && entry.isIntersecting) {
         firstImage.value.style.opacity = 0;
-        floatingText.value.style.display = "block";
+        floatingText.value.style.display = 'block';
       }
     });
   };
