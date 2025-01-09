@@ -7,7 +7,7 @@ import str from '@/locales/topic5-tainan.json';
 </script>
 
 <template>
-  <section id="tainan" class="ls-section ls-tainan">
+  <section id="Tainan" class="ls-section ls-tainan">
     <!-- cover -->
     <LsCityCover></LsCityCover>
 

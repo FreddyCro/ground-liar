@@ -1,5 +1,5 @@
 <script setup>
-import { computed, onMounted, ref, watch } from 'vue';
+import { computed, onMounted, onUnmounted, ref, watch } from 'vue';
 import { useElementBounding } from '@vueuse/core';
 
 const baseVideoUrl = 'https://vip.udn.com/newmedia/2025/landswindlers/videos';
@@ -7,23 +7,7 @@ const baseImageUrl = 'https://vip.udn.com/newmedia/2025/landswindlers/images';
 
 // 畫面寬度(不包含滾動軸)
 const containerWidth = ref(document.body.clientWidth);
-// 畫面大小變化時偵測畫面寬度(不包含滾動軸)
-window.addEventListener('resize', () => {
-  containerWidth.value = document.body.clientWidth;
-});
-onMounted(() => {
-  // 載入時偵測畫面寬度(不包含滾動軸)
-  containerWidth.value = document.body.clientWidth;
-});
-// 螢幕畫面高度
 const containerHeight = ref(window.innerHeight);
-
-const deviceType = computed(() => {
-  if (containerWidth.value <= 767) return 'mob';
-  if (containerWidth.value <= 1023) return 'pad';
-  return 'pc';
-});
-
 const keyVisual_img = ref();
 const keyVisual_words = ref();
 const opacity1 = ref(1);
@@ -31,9 +15,63 @@ const opacity2 = ref(0);
 const opacity3 = ref(0);
 const opacity4 = ref(0);
 const opacity5 = ref(0);
+const scrollCount = ref(1); // 紀錄滾動次數
+const currentImage = ref(7); // 當前圖片索引
+const floatingText = ref();
+const firstImage = ref();
+const secondImage = ref();
 const { top: wordsTop } = useElementBounding(keyVisual_words);
+const deviceType = computed(() => {
+  if (containerWidth.value <= 767) return 'mob';
+  if (containerWidth.value <= 1023) return 'pad';
+  return 'pc';
+});
 
-watch(wordsTop, (newWordsTop) => {
+watch(wordsTop, handleWordsTopUpdate);
+
+// 畫面大小變化時偵測畫面寬度(不包含滾動軸)
+window.addEventListener('resize', onResize);
+
+onMounted(() => {
+  // 載入時偵測畫面寬度(不包含滾動軸)
+  onResize();
+
+  handleEmptyContent();
+});
+
+onUnmounted(() => {
+  window.removeEventListener('resize', onResize);
+});
+
+function onResize() {
+  containerWidth.value = document.body.clientWidth;
+}
+
+function handleEmptyContent() {
+  const emptyContent = document.querySelectorAll('.topic2_gridCard_empty');
+  const entries = (entries) => {
+    entries.forEach((entry) => {
+      if (entry.target === emptyContent[0] && entry.isIntersecting) {
+        firstImage.value.style.opacity = 1;
+        floatingText.value.style.display = 'none';
+      } else if (entry.target === emptyContent[1] && entry.isIntersecting) {
+        firstImage.value.style.opacity = 0;
+        floatingText.value.style.display = 'none';
+      } else if (entry.target === emptyContent[2] && entry.isIntersecting) {
+        firstImage.value.style.opacity = 0;
+        floatingText.value.style.display = 'block';
+      }
+    });
+  };
+
+  const observer = new IntersectionObserver(entries, {
+    threshold: 0.5,
+  });
+
+  emptyContent.forEach((empty) => observer.observe(empty));
+}
+
+function handleWordsTopUpdate(newWordsTop) {
   if (
     newWordsTop <= -containerHeight.value / 2 &&
     newWordsTop >= -containerHeight.value
@@ -79,20 +117,16 @@ watch(wordsTop, (newWordsTop) => {
     opacity5.value = 0;
     keyVisual_img.value.src = `${baseImageUrl}/${deviceType.value}/landswindlers_pic2_2_${deviceType.value}.jpg`;
   }
-});
-
-// 不給捲動
-function preventScroll(event) {
-  event.preventDefault();
-  event.stopPropagation();
-
-  return false;
 }
-const scrollCount = ref(1); // 紀錄滾動次數
-const currentImage = ref(7); // 當前圖片索引
-const floatingText = ref();
-const firstImage = ref();
-const secondImage = ref();
+
+// 螢幕畫面高度
+// 不給捲動
+// function preventScroll(event) {
+//   event.preventDefault();
+//   event.stopPropagation();
+
+//   return false;
+// }
 
 // function handleScroll(event) {
 //   const direction = event.deltaY > 0 ? 'down' : 'up';
@@ -139,29 +173,6 @@ const secondImage = ref();
 //   }
 // });
 /////////////
-onMounted(() => {
-  const emptyContent = document.querySelectorAll('.topic2_gridCard_empty');
-  const entries = (entries) => {
-    entries.forEach((entry) => {
-      if (entry.target === emptyContent[0] && entry.isIntersecting) {
-        firstImage.value.style.opacity = 1;
-        floatingText.value.style.display = 'none';
-      } else if (entry.target === emptyContent[1] && entry.isIntersecting) {
-        firstImage.value.style.opacity = 0;
-        floatingText.value.style.display = 'none';
-      } else if (entry.target === emptyContent[2] && entry.isIntersecting) {
-        firstImage.value.style.opacity = 0;
-        floatingText.value.style.display = 'block';
-      }
-    });
-  };
-
-  const observer = new IntersectionObserver(entries, {
-    threshold: 0.5,
-  });
-
-  emptyContent.forEach((empty) => observer.observe(empty));
-});
 </script>
 
 <template>

@@ -7,7 +7,7 @@ import str from '@/locales/topic4-taichung.json';
 </script>
 
 <template>
-  <section id="taichung" class="ls-section ls-taichung">
+  <section id="Taichung" class="ls-section ls-taichung">
     <!-- cover -->
     <LsCityCover></LsCityCover>
 

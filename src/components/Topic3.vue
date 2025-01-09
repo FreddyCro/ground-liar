@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { NmdContainer } from '@udn-digital-center/common-components';
-import str from '@/locales/topic3-blackbox.json';
+import str from '@/locales/topic3-problems.json';
 </script>
 
 <template>
-  <section id="experts" class="ls-bbox">
+  <section id="problems" class="ls-problems">
     <NmdContainer>
       <p>{{ str.bboxTitle }}</p>
       <p>{{ str.gameTitle }}</p>
@@ -48,6 +48,6 @@ import str from '@/locales/topic3-blackbox.json';
 </template>
 
 <style lang="scss">
-.ls-bbox {
+.ls-problems {
 }
 </style>
