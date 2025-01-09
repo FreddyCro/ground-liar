@@ -1,0 +1,24 @@
+{
+  "extends": [
+      "@antfu",
+      "plugin:prettier/recommended"
+  ],
+  "ignorePatterns": [
+      "dist/**/*.*"
+  ],
+  "rules": {
+      "no-console": "off",
+      "antfu/if-newline": "off"
+  },
+  "overrides": [
+      {
+          "files": [
+              "*.ts",
+              "*.vue"
+          ],
+          "rules": {
+              "no-undef": "off"
+          }
+      }
+  ]
+}
