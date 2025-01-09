@@ -9,11 +9,13 @@ import {
   NmdToTop,
 } from '@udn-digital-center/common-components';
 import strFooter from '@/locales/footer.json';
+
+const CURRENT_YEAR = new Date().getFullYear();
 </script>
 
 <template>
   <div class="ls-footer">
-    <section style="padding: 80px 0; background-color: #f1f1f1">
+    <div class="ls-footer__info">
       <NmdContainer>
         <NmdSeries>
           <template #context>{{ strFooter.seriesTitle }}</template>
@@ -49,7 +51,7 @@ import strFooter from '@/locales/footer.json';
           </NmdSeriesItem>
         </NmdSeries>
       </NmdContainer>
-      <NmdAuthor style="--maxWidth: 160px">
+      <NmdAuthor>
         <template #採訪撰稿>{{ strFooter.editor1 }}</template>
         <template #統籌製作>{{ strFooter.editor2 }}</template>
         <template #視覺設計>{{ strFooter.editor3 }}</template>
@@ -64,11 +66,26 @@ import strFooter from '@/locales/footer.json';
         :line="{ href: shareURL_line, target: '_blank' }"
         :twitter="{ href: shareURL_twitter }"
         twitter-icon="x"
-      ></NmdShare>
-    </section>
-    <NmdToTop style="z-index: 1001"></NmdToTop>
-    <NmdFooter :year="2025"></NmdFooter>
+      />
+    </div>
+    <NmdToTop />
+    <NmdFooter :year="CURRENT_YEAR" />
   </div>
 </template>
 
-<style lang="scss"></style>
+<style lang="scss">
+.ls-footer {
+  &__info {
+    padding: 80px 0;
+    background-color: #f1f1f1;
+  }
+
+  .author-grid {
+    --maxWidth: 160px;
+  }
+
+  .nmd-to-top {
+    z-index: 1001;
+  }
+}
+</style>
