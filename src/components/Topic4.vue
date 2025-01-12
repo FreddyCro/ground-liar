@@ -1,7 +1,124 @@
-<script setup lang="ts"></script>
+<script setup>
+import LsCityGridImg from './LsCityGridImg.vue';
+import LsCityHeading from './LsCityHeading.vue';
+import LsCityHighlight from './LsCityHighlight.vue';
+import LsPic from './LsPic.vue';
+import str from '@/locales/topic4-taichung.json';
+</script>
 
 <template>
-  <div></div>
+  <section id="Taichung" class="ls-taichung">
+    <!-- heading -->
+    <LsCityHeading
+      vid="vid/landswindlers_video4_1"
+      poster="img/landswindlers_preview4_1"
+      :title="str.taichungTitle"
+      :subtitle="str.taichungSubTitle"
+    ></LsCityHeading>
+
+    <!-- highligh -->
+    <LsCityHighlight
+      id="kaohsiung-hl"
+      :imgs="[
+        'img/landswindlers_pic4_2',
+        'img/landswindlers_pic4_3',
+        'img/landswindlers_pic4_4',
+        'img/landswindlers_pic4_5',
+      ]"
+    >
+      <template #content-1>
+        <p>{{ str.taichungP1 }}</p>
+      </template>
+      <template #content-2>
+        <p>{{ str.taichungP2 }}</p>
+      </template>
+      <template #content-3>
+        <p>{{ str.taichungP3 }}</p>
+      </template>
+      <template #content-4>
+        <p>{{ str.taichungP4 }}</p>
+      </template>
+    </LsCityHighlight>
+
+    <!-- grid-img -->
+    <LsCityGridImg
+      :text="str.taichungGridTitle"
+      img-front="img/landswindlers_pic4_6"
+      img-back="img/landswindlers_pic4_7"
+    />
+
+    <!-- article -->
+    <div class="ls-section">
+      <div class="ls-container ls-article">
+        <div class="ls-subsection">
+          <h3 class="ls-h3">{{ str.taichungSection1Title }}</h3>
+          <p>{{ str.taichungSection1P1 }}</p>
+          <p>{{ str.taichungSection1P2 }}</p>
+          <p>{{ str.taichungSection1P3 }}</p>
+          <p>{{ str.taichungSection1P4 }}</p>
+          <p>{{ str.taichungSection1P5 }}</p>
+          <p>{{ str.taichungSection1P6 }}</p>
+        </div>
+        <div class="ls-subsection">
+          <figure>
+            <LsPic
+              src="img/landswindlers_pic4_8"
+              :srcset="['mob']"
+              :webp="true"
+              :alt="str.taichungSection1ImgCaption"
+            />
+            <figcaption class="ls-caption">
+              {{ str.taichungSection1ImgCaption }}
+            </figcaption>
+          </figure>
+        </div>
+        <div class="ls-subsection">
+          <h3 class="ls-h3">{{ str.taichungSection2Title }}</h3>
+          <p>{{ str.taichungSection2P1 }}</p>
+          <p>{{ str.taichungSection2P2 }}</p>
+          <p>{{ str.taichungSection2P3 }}</p>
+          <p>{{ str.taichungSection2P4 }}</p>
+          <p>{{ str.taichungSection2P5 }}</p>
+        </div>
+        <div class="ls-subsection">
+          <figure>
+            <LsPic
+              src="img/landswindlers_pic4_9"
+              :srcset="['mob']"
+              :webp="true"
+              :alt="str.taichungSection1ImgCaption"
+            />
+            <figcaption class="ls-caption">
+              {{ str.taichungSection2ImgCaption }}
+            </figcaption>
+          </figure>
+        </div>
+        <div class="ls-subsection">
+          <h3 class="ls-h3">{{ str.taichungSection3Title }}</h3>
+          <p>{{ str.taichungSection3P1 }}</p>
+          <p>{{ str.taichungSection3P2 }}</p>
+          <p>{{ str.taichungSection3P3 }}</p>
+          <p>{{ str.taichungSection3P4 }}</p>
+          <p>{{ str.taichungSection3P5 }}</p>
+        </div>
+        <h4 class="ls-h4">{{ str.taichungSection4Title }}</h4>
+      </div>
+      <div class="ls-subsection ls-subsection--no-mt">
+        <div
+          class="flourish-embed flourish-chart"
+          data-src="visualisation/20500450"
+        ></div>
+      </div>
+      <div class="ls-container ls-article">
+        <div class="ls-subsection ls-subsection--no-mb">
+          <div
+            class="flourish-embed flourish-chart"
+            data-src="visualisation/20500490"
+          ></div>
+        </div>
+      </div>
+    </div>
+  </section>
 </template>
 
 <style scoped lang="scss"></style>

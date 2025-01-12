@@ -1,3 +1,5 @@
+import meta from '@/locales/meta.json';
+
 export function detectMob() {
   return Boolean(
     navigator.userAgent.match(/Android/i) ||
@@ -6,15 +8,14 @@ export function detectMob() {
       navigator.userAgent.match(/iPad/i) ||
       navigator.userAgent.match(/iPod/i) ||
       navigator.userAgent.match(/BlackBerry/i) ||
-      navigator.userAgent.match(/Windows Phone/i),
+      navigator.userAgent.match(/Windows Phone/i)
   );
 }
 
 // 以下三行，請根據每個專案的meta自行調整
-const metaTitle = "自辦重劃發財夢：拆解一場圍繞土地的金錢遊戲 | 專題 | 聯合報";
-const metaDescription =
-  "即使內政部已修正辦法，自辦市地重劃仍亂象叢生，包括開發公司虛灌人頭地主及轉賣抵費地套利百億。聯合報盤點三個重劃區，拆解這場圍繞土地的金錢遊戲。";
-const metaURL = "https://vip.udn.com/newmedia/2025/landswindlers/";
+const metaTitle = meta.metaTitle;
+const metaDescription = meta.metaDesc;
+const metaURL = meta.metaURL;
 
 const encodeTitle = encodeURI(metaTitle);
 const encodeDescription = encodeURI(metaDescription);
