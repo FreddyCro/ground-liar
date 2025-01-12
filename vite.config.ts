@@ -5,24 +5,25 @@ import viteCompression from 'vite-plugin-compression';
 import { createHtmlPlugin } from 'vite-plugin-html';
 import meta from './src/locales/meta.json';
 
-function handleBase(mode: string) {
-  if (mode === 'production') {
-    return '/newmedia/2025/landswindlers/';
-  } else if (mode === 'test') {
-    return '/test/landswindlers/';
-  } else {
-    return '/';
-  }
-}
+// function handleBase(mode: string) {
+//   if (mode === 'production') {
+//     return '/newmedia/2025/landswindlers/';
+//   } else if (mode === 'test') {
+//     return '/test/landswindlers/';
+//   } else {
+//     return '/';
+//   }
+// }
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
   // loadEnv(mode, root, prefix)
   const env = loadEnv('', process.cwd());
-  const { VITE_APP_MODE } = env;
+  const { VITE_URL } = env;
 
   return {
-    base: handleBase(mode),
+    // base: handleBase(mode),
+    base: VITE_URL,
     plugins: [
       vue(),
       viteCompression(), // 壓縮插件(.gz)
