@@ -99,7 +99,7 @@
         if (!f._fbq) f._fbq = n;
         n.push = n;
         n.loaded = !0;
-        n.version = "2.0";
+        n.version = '2.0';
         n.queue = [];
         t = b.createElement(e);
         t.async = !0;
@@ -109,13 +109,13 @@
       })(
         window,
         document,
-        "script",
-        "https://connect.facebook.net/zh-TW/fbevents.js"
+        'script',
+        'https://connect.facebook.net/zh-TW/fbevents.js',
       );
       // eslint-disable-next-line no-undef
-      fbq("init", "321350072644130");
+      fbq('init', '321350072644130');
       // eslint-disable-next-line no-undef
-      fbq("track", "PageView");
+      fbq('track', 'PageView');
     </script>
 
     <!-- Google Tag Manager -->
@@ -163,6 +163,9 @@
 
     <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>
+    <script
+      src="https://public.flourish.studio/resources/embed.js"
+      defer
+    ></script>
   </body>
 </html>
-

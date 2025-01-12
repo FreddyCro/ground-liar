@@ -1,30 +1,69 @@
-<script setup lang="ts">
-import { NmdContainer } from '@udn-digital-center/common-components';
+<script setup>
+import LsPic from './LsPic.vue';
 import str from '@/locales/topic6-solutions.json';
 </script>
 
 <template>
-  <section id="solutions" class="ls-solutions">
-    <NmdContainer>
-      <p>{{ str.solutionsTitle1 }}</p>
-      <p>{{ str.solutionsTitle2 }}</p>
-      <p>{{ str.solutionsP1 }}</p>
-      <p>{{ str.solutionsP2 }}</p>
-      <p>{{ str.solutionsImgDesc1 }}</p>
-      <p>{{ str.solutionsSection1Title }}</p>
-      <p>{{ str.solutionsSection1P1 }}</p>
-      <p>{{ str.solutionsSection1P2 }}</p>
-      <p>{{ str.solutionsSection1P3 }}</p>
+  <section id="solutions" class="ls-section ls-section--no-pt ls-solutions">
+    <div class="ls-heading">
+      <!-- bg image -->
+      <LsPic
+        src="img/landswindlers_pic6_1"
+        :webp="true"
+        :alt="str.solutionsTitle1"
+      />
+      <h2 class="ls-h3 ls-heading-title">{{ str.solutionsTitle1 }}</h2>
+    </div>
+
+    <div class="ls-container ls-article">
+      <div class="ls-subsection">
+        <p>{{ str.solutionsP1 }}</p>
+        <p>{{ str.solutionsP2 }}</p>
+        <p>{{ str.solutionsP3 }}</p>
+      </div>
+
+      <div class="ls-subsection">
+        <figure>
+          <LsPic
+            src="img/landswindlers_pic6_2"
+            :srcset="['mob']"
+            :webp="true"
+            :alt="str.solutionsImgDesc1"
+          />
+          <figcaption class="ls-caption">
+            {{ str.solutionsImgDesc1 }}
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="ls-subsection">
+        <p>{{ str.solutionsP4 }}</p>
+        <p>{{ str.solutionsP5 }}</p>
+      </div>
+
+      <div class="ls-subsection">
+        <h3 class="ls-h3">{{ str.solutionsSection1Title }}</h3>
+        <p>{{ str.solutionsSection1P1 }}</p>
+        <p>{{ str.solutionsSection1P2 }}</p>
+        <p>{{ str.solutionsSection1P3 }}</p>
+      </div>
+
+      <div class="ls-subsection">
+        <figure>
+          <LsPic
+            src="img/landswindlers_pic6_3"
+            :srcset="['mob']"
+            :webp="true"
+            :alt="str.solutionsImgDesc2"
+          />
+          <figcaption class="ls-caption">
+            {{ str.solutionsImgDesc2 }}
+          </figcaption>
+        </figure>
+      </div>
       <p>{{ str.solutionsSection1P4 }}</p>
       <p>{{ str.solutionsSection1P5 }}</p>
-      <p>{{ str.solutionsImgDesc2 }}</p>
-      <p>{{ str.solutionsSection2Title }}</p>
-      <p>{{ str.solutionsSection2P1 }}</p>
-      <p>{{ str.solutionsSection2P2 }}</p>
-      <p>{{ str.solutionsSection2P3 }}</p>
-      <p>{{ str.solutionsSection2P4 }}</p>
-      <p>{{ str.solutionsSection2P5 }}</p>
-    </NmdContainer>
+    </div>
   </section>
 </template>
 

@@ -8,6 +8,7 @@ import {
   NmdShare,
   NmdToTop,
 } from '@udn-digital-center/common-components';
+import LsPic from './LsPic.vue';
 import strFooter from '@/locales/footer.json';
 
 const CURRENT_YEAR = new Date().getFullYear();
@@ -25,19 +26,19 @@ const CURRENT_YEAR = new Date().getFullYear();
                 title: strFooter.series1Title,
                 to: strFooter.series1Link,
                 ga: 'relatednews_1',
-                img: 'landswindlers_pic7_1_pcpadmob',
+                img: 'img/landswindlers_pic7_1',
               },
               {
                 title: strFooter.series2Title,
                 to: strFooter.series2Link,
                 ga: 'relatednews_2',
-                img: 'landswindlers_pic7_2_pcpadmob',
+                img: 'img/landswindlers_pic7_2',
               },
               {
                 title: strFooter.series3Title,
                 to: strFooter.series3Link,
                 ga: 'relatednews_3',
-                img: 'landswindlers_pic7_3_pcpadmob',
+                img: 'img/landswindlers_pic7_3',
               },
             ]"
             :key="item"
@@ -46,7 +47,12 @@ const CURRENT_YEAR = new Date().getFullYear();
           >
             {{ item.title }}
             <template #image>
-              <img :src="item.img" />
+              <LsPic
+                :src="item.img"
+                :srcset="['mob']"
+                :webp="true"
+                :alt="item.title"
+              />
             </template>
           </NmdSeriesItem>
         </NmdSeries>

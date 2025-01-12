@@ -29,6 +29,30 @@
   }
 }
 
+@mixin min-mob {
+  @media screen and (min-width: 375px) {
+    @content;
+  }
+}
+
+@mixin min-pad {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin min-pc {
+  @media screen and (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin min-lpc {
+  @media screen and (min-width: 1920px) {
+    @content;
+  }
+}
+
 // use in this project
 @mixin font-style(
   $family: Noto Sans TC,

@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build --mode production",
-    "build:test": "vite build --mode test",
+    "build:nmdap": "vite build --mode nmdap",
+    "build:ghpage": "vite build --mode ghpage",
     "preview": "vite preview",
     "prepare": "husky install",
     "lint": "eslint \"**/*.{js,ts,vue}\" --fix"
@@ -26,7 +27,7 @@
     "husky": "^8.0.3",
     "lint-staged": "^15.2.10",
     "prettier": "^3.3.3",
-    "sass": "^1.80.6",
+    "sass": "1.76",
     "typescript": "~5.6.2",
     "vite": "^6.0.1",
     "vite-plugin-compression": "^0.5.1",

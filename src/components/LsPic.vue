@@ -1,5 +1,6 @@
 <script setup>
-const config = useRuntimeConfig();
+import { computed } from 'vue';
+
 const props = defineProps({
   id: {
     type: String,
@@ -32,6 +33,9 @@ const props = defineProps({
   alt: {
     type: String,
   },
+  altby: {
+    type: String,
+  },
   loading: {
     type: String,
     default: 'lazy',
@@ -50,8 +54,7 @@ const props = defineProps({
   },
 });
 
-// const device = useState('device');
-const APP_ASSETS_PATH = config.public.APP_ASSETS_PATH;
+const { VITE_ASSETS_PATH } = import.meta.env;
 
 const parsedMedia = computed(() => {
   if (!props.srcset) return;
@@ -103,12 +106,12 @@ const parsedWebpSrcset = computed(() => {
 
 const parsedDefault = computed(() => {
   if (props.default === 'pc')
-    return `${APP_ASSETS_PATH}${props.src}_pc.${props.ext}`;
+    return `${VITE_ASSETS_PATH}${props.src}_pc.${props.ext}`;
   if (props.default === 'pad')
-    return `${APP_ASSETS_PATH}${props.src}_pad.${props.ext}`;
+    return `${VITE_ASSETS_PATH}${props.src}_pad.${props.ext}`;
   if (props.default === 'mob')
-    return `${APP_ASSETS_PATH}${props.src}_mob.${props.ext}`;
-  return `${APP_ASSETS_PATH}${props.src}.${props.ext}`;
+    return `${VITE_ASSETS_PATH}${props.src}_mob.${props.ext}`;
+  return `${VITE_ASSETS_PATH}${props.src}.${props.ext}`;
 });
 
 function handleImage({ src, srcset, ext, use2x, usePrefix }) {
@@ -119,20 +122,20 @@ function handleImage({ src, srcset, ext, use2x, usePrefix }) {
   const srcsetList = [];
 
   if (srcset.includes('pc')) {
-    let pc = `${APP_ASSETS_PATH}${src}${usePrefix ? '_pc' : ''}.${ext} 1x`;
+    let pc = `${VITE_ASSETS_PATH}${src}${usePrefix ? '_pc' : ''}.${ext} 1x`;
 
     if (use2x) {
-      pc += `, ${APP_ASSETS_PATH}${src}${usePrefix ? '_pc' : ''}@2x.${ext} 2x`;
+      pc += `, ${VITE_ASSETS_PATH}${src}${usePrefix ? '_pc' : ''}@2x.${ext} 2x`;
     }
 
     srcsetList.push(pc);
   }
 
   if (srcset.includes('pad')) {
-    let pad = `${APP_ASSETS_PATH}${src}${usePrefix ? '_pad' : ''}.${ext} 1x`;
+    let pad = `${VITE_ASSETS_PATH}${src}${usePrefix ? '_pad' : ''}.${ext} 1x`;
 
     if (use2x) {
-      pad += `, ${APP_ASSETS_PATH}${src}${
+      pad += `, ${VITE_ASSETS_PATH}${src}${
         usePrefix ? '_pad' : ''
       }@2x.${ext} 2x`;
     }
@@ -141,10 +144,10 @@ function handleImage({ src, srcset, ext, use2x, usePrefix }) {
   }
 
   if (srcset.includes('mob')) {
-    let mob = `${APP_ASSETS_PATH}${src}${usePrefix ? '_mob' : ''}.${ext} 1x`;
+    let mob = `${VITE_ASSETS_PATH}${src}${usePrefix ? '_mob' : ''}.${ext} 1x`;
 
     if (use2x) {
-      mob += `, ${APP_ASSETS_PATH}${src}${
+      mob += `, ${VITE_ASSETS_PATH}${src}${
         usePrefix ? '_mob' : ''
       }@2x.${ext} 2x`;
     }
@@ -161,22 +164,23 @@ function handleImage({ src, srcset, ext, use2x, usePrefix }) {
     <template v-for="(media, index) in parsedMedia">
       <source
         v-if="webp"
+        :key="`webp-${media}`"
         :media="media"
         :srcset="parsedWebpSrcset[index]"
         type="image/webp"
-        :key="`webp-${media}`"
       />
       <source
         v-if="srcset.length > 0"
+        :key="`normal-${media}`"
         :media="media"
         :srcset="parsedSrcset[index]"
-        :key="`normal-${media}`"
       />
     </template>
     <img
       :class="classname || ''"
       :src="parsedDefault"
       :alt="alt"
+      :aria-labelledby="altby"
       :loading="loading"
     />
   </picture>
