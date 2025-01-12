@@ -177,6 +177,7 @@ function handleImage({ src, srcset, ext, use2x, usePrefix }) {
       />
     </template>
     <img
+      class="ls-pic-img"
       :class="classname || ''"
       :src="parsedDefault"
       :alt="alt"
@@ -185,3 +186,10 @@ function handleImage({ src, srcset, ext, use2x, usePrefix }) {
     />
   </picture>
 </template>
+
+<style lang="scss">
+.ls-pic-img {
+  width: 100%;
+  height: auto;
+}
+</style>

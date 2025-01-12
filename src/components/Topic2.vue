@@ -59,7 +59,7 @@ import str from '@/locales/topic2-kaohsiung.json';
     />
 
     <!-- article -->
-    <div class="ls-section">
+    <div class="ls-section ls-section--no-pt">
       <div class="ls-container ls-article">
         <h3 class="ls-h3">{{ str.landlordTitle }}</h3>
         <p>{{ str.landlordP1 }}</p>

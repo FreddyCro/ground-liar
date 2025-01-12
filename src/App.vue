@@ -7,8 +7,6 @@ import Topic3 from './components/Topic3.vue';
 import Topic4 from './components/Topic4.vue';
 import Topic5 from './components/Topic5.vue';
 import Topic6 from './components/Topic6.vue';
-
-console.log(import.meta.env);
 </script>
 
 <template>

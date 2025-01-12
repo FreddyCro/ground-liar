@@ -55,11 +55,11 @@ import str from '@/locales/topic5-tainan.json';
       img-front="img/landswindlers_pic5_6"
       img-back="img/landswindlers_pic5_7"
     />
-    F
+
     <!-- article -->
-    <div class="ls-section">
+    <div class="ls-section ls-section--no-pt">
       <div class="ls-container ls-article">
-        <div class="ls-subsection">
+        <div class="ls-subsection ls-subsection--no-mt">
           <h3 class="ls-h3">{{ str.tainanSection1Title }}</h3>
           <p>{{ str.tainanSection1P1 }}</p>
           <p>{{ str.tainanSection1P2 }}</p>

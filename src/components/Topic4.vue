@@ -48,9 +48,9 @@ import str from '@/locales/topic4-taichung.json';
     />
 
     <!-- article -->
-    <div class="ls-section">
+    <div class="ls-section ls-section--no-pt">
       <div class="ls-container ls-article">
-        <div class="ls-subsection">
+        <div class="ls-subsection ls-subsection--no-mt">
           <h3 class="ls-h3">{{ str.taichungSection1Title }}</h3>
           <p>{{ str.taichungSection1P1 }}</p>
           <p>{{ str.taichungSection1P2 }}</p>

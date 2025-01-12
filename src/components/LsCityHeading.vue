@@ -50,15 +50,16 @@ defineProps({
     }
 
     video {
-      grid-area: 1/1/2/2;
       height: 100%;
       max-width: 100%;
       object-fit: cover; /* 確保影片充滿區域 */
     }
 
     .topic2_logo_title {
-      grid-area: 1/1/2/2;
-
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       display: flex;
       flex-direction: column;
       gap: 20px;

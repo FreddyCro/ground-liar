@@ -42,20 +42,23 @@ function handleInitialStyle() {
   if (root.value && props.imgs) {
     root.value.style.setProperty(
       '--ls-city-hl-container-height',
-      `${props.imgs.length * 150}vh`,
+      `${(props.imgs.length + 0.5) * 150}vh`,
     );
   }
 }
 
 function handleWordsTopUpdate(newWordsTop) {
   const gap = containerHeight.value * 1.5;
+  const offset = 0.75;
 
   // step: 1~n
   const steps = props.imgs.slice(1).map((_, index) => {
-    const start = -gap * (index + 1 - 0.5);
-    const end = -gap * (index + 2 - 0.5);
+    const start = -gap * (index + 1 - offset);
+    const end = -gap * (index + 2 - offset);
+    const endOffset =
+      props.imgs.length - 2 === index ? window.innerHeight * 1 : 0;
 
-    return newWordsTop <= start && newWordsTop >= end;
+    return newWordsTop <= start && newWordsTop >= end - endOffset;
   });
 
   // if step is not in 1~n, set to 0
@@ -104,15 +107,12 @@ function handleWordsTopUpdate(newWordsTop) {
   &__key-visual-bg {
     position: sticky;
     top: 0;
-
     width: 100%;
-    // height: 100vh;
-    // overflow: hidden;
 
     img {
       width: 100%;
-      height: auto;
-      // object-fit: cover;
+      height: 100vh;
+      object-fit: cover;
     }
   }
 
@@ -142,7 +142,7 @@ function handleWordsTopUpdate(newWordsTop) {
   }
 
   &__key-visual-content-word {
-    width: 470px;
+    max-width: 470px;
     padding: 10px 26px;
     margin: 0 auto;
     background-color: #000000d9;

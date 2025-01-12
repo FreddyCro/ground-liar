@@ -201,7 +201,8 @@ function handleStyle() {
 
     video {
       width: 100%;
-      height: var(--ls-intro-vid-height);
+      /* height: var(--ls-intro-vid-height); */
+      height: 100vh;
       object-fit: cover;
     }
   }

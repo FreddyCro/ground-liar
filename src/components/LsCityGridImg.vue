@@ -41,25 +41,28 @@ function handleEmptyContent() {
 <template>
   <div class="ls-citygi">
     <!-- grid -->
-    <div class="topic2_gridCard_container">
+    <div class="ls-section topic2_gridCard_container">
       <div class="topic2_gridCard_content">
-        <div class="topic2_gridCard_image">
-          <LsPic
-            v-if="isFrontImgShow"
-            :src="imgFront"
-            classname="image"
-            :webp="true"
-            :alt="text"
-          />
-          <LsPic
-            :src="imgBack"
-            classname="image"
-            :webp="true"
-            role="presentation"
-          />
-        </div>
-        <div v-if="isFloatingTextShow" class="floating-text">
-          {{ text }}
+        <div class="ls-citygi__img-container">
+          <div class="ls-citygi__img-wrap">
+            <LsPic :src="imgFront" classname="image" :webp="true" :alt="text" />
+          </div>
+          <div
+            class="ls-citygi__img-wrap ls-citygi__img-wrap-back"
+            :class="{
+              'ls-citygi__img-wrap-back--show': !isFrontImgShow,
+            }"
+          >
+            <LsPic
+              :src="imgBack"
+              classname="image"
+              :webp="true"
+              role="presentation"
+            />
+          </div>
+          <div v-if="isFloatingTextShow" class="ls-h5 ls-citygi__text">
+            {{ text }}
+          </div>
         </div>
       </div>
       <div class="topic2_gridCard_box">
@@ -76,6 +79,47 @@ function handleEmptyContent() {
 
 <style lang="scss">
 .ls-citygi {
+  &__text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 45%;
+    padding: 0 20px;
+    font-weight: 700;
+    color: $B6;
+    animation: floatUp 0.5s ease-in forwards; /* 浮現動畫 */
+  }
+
+  &__img-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__img-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: auto;
+    }
+  }
+
+  &__img-wrap-back {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: 0.15s ease-in-out;
+
+    &--show {
+      opacity: 1;
+    }
+  }
+
   .topic2_gridCard_container {
     position: relative;
     max-width: 1060px;
@@ -86,26 +130,10 @@ function handleEmptyContent() {
   .topic2_gridCard_content {
     position: sticky;
     top: 0;
-    height: calc(100vh - 80px); /* 一次顯示一張圖片 */
-    padding: 40px 0;
-  }
-
-  .topic2_gridCard_image {
-    display: grid;
-    height: 100%;
-
-    .image:nth-of-type(1) {
-      position: relative;
-      grid-column: 1 / 2;
-      grid-row: 1 / 2;
-    }
-
-    .image:nth-of-type(2) {
-      position: relative;
-      grid-column: 1 / 2;
-      grid-row: 1 / 2;
-      z-index: -1;
-    }
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .topic2_gridCard_box {
@@ -114,31 +142,12 @@ function handleEmptyContent() {
     left: 0;
     width: 100%;
     height: 100%;
+    pointer-events: none;
   }
 
   .topic2_gridCard_empty {
-    height: 100vh;
-    padding: 40px 0;
-  }
-
-  .image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: all 0.8s ease; /* 圖片切換效果 */
-  }
-
-  .floating-text {
-    position: absolute;
-    bottom: 50%;
-    right: 0;
-    width: 45%;
-    padding: 0 20px;
-    animation: floatUp 0.5s ease-in forwards; /* 浮現動畫 */
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 32px;
-    color: #fafafa;
+    height: 70vh;
+    pointer-events: none;
   }
 
   @keyframes floatUp {
