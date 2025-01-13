@@ -19,7 +19,7 @@ import meta from './src/locales/meta.json';
 export default defineConfig(({ mode }) => {
   // loadEnv(mode, root, prefix)
   const env = loadEnv('', process.cwd());
-  const { VITE_URL } = env;
+  const { VITE_URL, VITE_MODE } = env;
 
   return {
     // base: handleBase(mode),
@@ -36,6 +36,10 @@ export default defineConfig(({ mode }) => {
             keywords: meta.metaKeywords,
             url: meta.metaURL,
             image: meta.metaImage,
+            robot:
+              VITE_MODE === 'production'
+                ? 'index, follow'
+                : 'noindex, nofollow',
           },
         },
       }), // 可注入html中ejs模板內填寫的變數
