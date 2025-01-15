@@ -18,17 +18,20 @@ import str from '@/locales/topic3-problems.json';
         <div class="ls-paragraphs">
           <p>{{ str.gameQ1A1 }}</p>
           <p>{{ str.gameQ1A2 }}</p>
+          <p>{{ str.gameQ1A3 }}</p>
         </div>
         <h4 class="ls-h5">{{ str.gameQ2 }}</h4>
         <div class="ls-paragraphs">
           <p>{{ str.gameQ2A1 }}</p>
           <p>{{ str.gameQ2A2 }}</p>
+          <p>{{ str.gameQ2A3 }}</p>
         </div>
         <h4 class="ls-h5">{{ str.gameQ3 }}</h4>
         <div class="ls-paragraphs">
           <p>{{ str.gameQ3A1 }}</p>
           <p>{{ str.gameQ3A2 }}</p>
           <p>{{ str.gameQ3A3 }}</p>
+          <p>{{ str.gameQ3A4 }}</p>
         </div>
       </div>
 
@@ -45,6 +48,7 @@ import str from '@/locales/topic3-problems.json';
         <div class="ls-paragraphs">
           <p>{{ str.roomSection1P1 }}</p>
           <p>{{ str.roomSection1P2 }}</p>
+          <p>{{ str.roomSection1P3 }}</p>
         </div>
       </div>
 
@@ -60,6 +64,7 @@ import str from '@/locales/topic3-problems.json';
         <div class="ls-paragraphs">
           <p>{{ str.roomSection2P1 }}</p>
           <p>{{ str.roomSection2P2 }}</p>
+          <p>{{ str.roomSection2P3 }}</p>
         </div>
         <h4 class="ls-h5">{{ str.roomSection3Title }}</h4>
         <div class="ls-paragraphs">

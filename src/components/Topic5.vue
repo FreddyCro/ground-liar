@@ -35,6 +35,8 @@ import str from '@/locales/topic5-tainan.json';
         <p>{{ str.tainanP2_2 }}</p>
         <p>{{ str.tainanP2_3 }}</p>
         <p>{{ str.tainanP2_4 }}</p>
+        <p>{{ str.tainanP2_5 }}</p>
+        <p>{{ str.tainanP2_6 }}</p>
       </template>
       <template #content-3>
         <p>{{ str.tainanP3_1 }}</p>
