@@ -1,0 +1,11 @@
+// 各版面下內容和邊界的距離
+$horizontal-spacing-smob: 20px;
+$horizontal-spacing-mob: 26px;
+$horizontal-spacing-pad: max(calc((100% - 620px) / 2), 119px);
+$horizontal-spacing-pc: calc((100% - 620px) / 2);
+
+// 各版面下內容的寬度
+$contents-width-smob: calc(100% - (20px * 2));
+$contents-width-mob: calc(100% - (26px * 2));
+$contents-width-pad: min(calc(100% - (119px * 2)), 620px);
+$contents-width-pc: 620px;
