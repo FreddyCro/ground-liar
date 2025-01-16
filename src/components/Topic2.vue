@@ -20,11 +20,11 @@ import str from '@/locales/topic2-kaohsiung.json';
     <LsCityHighlight
       id="kaohsiung-hl"
       :imgs="[
-        'img/landswindlers_pic2_2',
-        'img/landswindlers_pic2_3',
-        'img/landswindlers_pic2_4',
-        'img/landswindlers_pic2_5',
-        'img/landswindlers_pic2_6',
+        { src: 'img/landswindlers_pic2_2', bg: 'black' },
+        { src: 'img/landswindlers_pic2_3' },
+        { src: 'img/landswindlers_pic2_4' },
+        { src: 'img/landswindlers_pic2_5', bg: 'white' },
+        { src: 'img/landswindlers_pic2_6', bg: 'white' },
       ]"
     >
       <template #content-1>

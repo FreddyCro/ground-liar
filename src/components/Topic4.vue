@@ -20,10 +20,10 @@ import str from '@/locales/topic4-taichung.json';
     <LsCityHighlight
       id="kaohsiung-hl"
       :imgs="[
-        'img/landswindlers_pic4_2',
-        'img/landswindlers_pic4_3',
-        'img/landswindlers_pic4_4',
-        'img/landswindlers_pic4_5',
+        { src: 'img/landswindlers_pic4_2' },
+        { src: 'img/landswindlers_pic4_3' },
+        { src: 'img/landswindlers_pic4_4' },
+        { src: 'img/landswindlers_pic4_5' },
       ]"
     >
       <template #content-1>
