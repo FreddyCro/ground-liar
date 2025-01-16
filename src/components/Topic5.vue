@@ -31,22 +31,26 @@ import str from '@/locales/topic5-tainan.json';
         <p>{{ str.tainanP1 }}</p>
       </template>
       <template #content-2>
-        <p>{{ str.tainanP2_1 }}</p>
-        <p>{{ str.tainanP2_2 }}</p>
-        <p>{{ str.tainanP2_3 }}</p>
-        <p>{{ str.tainanP2_4 }}</p>
-        <p>{{ str.tainanP2_5 }}</p>
-        <p>{{ str.tainanP2_6 }}</p>
+        <p class="ls-tainan__hl-date">{{ str.tainanP2_1 }}</p>
+        <p class="ls-tainan__hl-text">{{ str.tainanP2_2 }}</p>
+        <p class="ls-tainan__hl-date">{{ str.tainanP2_3 }}</p>
+        <p class="ls-tainan__hl-text">{{ str.tainanP2_4 }}</p>
+        <p class="ls-tainan__hl-date">{{ str.tainanP2_5 }}</p>
+        <p class="ls-tainan__hl-text">{{ str.tainanP2_6 }}</p>
       </template>
       <template #content-3>
-        <p>{{ str.tainanP3_1 }}</p>
+        <p class="ls-tainan__hl-date ls-tainan__hl-date--mb-large">
+          {{ str.tainanP3_1 }}
+        </p>
         <p>{{ str.tainanP3_2 }}</p>
       </template>
       <template #content-4>
         <p>{{ str.tainanP4 }}</p>
       </template>
       <template #content-5>
-        <p>{{ str.tainanP5_1 }}</p>
+        <p class="ls-tainan__hl-date ls-tainan__hl-date--mb-large">
+          {{ str.tainanP5_1 }}
+        </p>
         <p>{{ str.tainanP5_2 }}</p>
       </template>
     </LsCityHighlight>
@@ -124,4 +128,36 @@ import str from '@/locales/topic5-tainan.json';
   </section>
 </template>
 
-<style scoped lang="scss"></style>
+<style lang="scss">
+.ls-tainan {
+  &__hl-date {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: $Y1;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &--mb-large {
+      margin-bottom: 10px;
+    }
+  }
+
+  .ls-citygi__text {
+    top: calc(44% - 48px);
+    width: 100%;
+
+    @include min-pad {
+      top: 41.5%;
+    }
+
+    @include min-pc {
+      top: 31.5%;
+      left: auto;
+      right: 0;
+      width: calc(76% - 10px);
+    }
+  }
+}
+</style>
