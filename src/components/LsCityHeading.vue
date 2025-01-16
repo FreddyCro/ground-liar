@@ -28,7 +28,7 @@ defineProps({
         />
         <div class="topic2_logo_title">
           <div>{{ title }}</div>
-          <div>{{ subtitle }}</div>
+          <div class="ls-h3">{{ subtitle }}</div>
         </div>
       </div>
     </div>
@@ -56,33 +56,52 @@ defineProps({
     }
 
     .topic2_logo_title {
+      --title-size: 120px;
+      --title-line-height: 120px;
+      --subtitle-px: 36px;
+
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%);
+      width: 100%;
+      max-width: 240px;
       display: flex;
-      flex-direction: column;
       gap: 20px;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
+      transform: translate(-50%, -50%);
 
       :nth-child(1) {
-        font-size: 180px;
+        font-size: var(--title-size);
         font-weight: 700;
-        line-height: 200px;
+        line-height: var(--title-line-height);
         text-align: center;
         color: #f1f1f1;
         opacity: 50%;
       }
+
       :nth-child(2) {
         font-size: 32px;
         font-weight: 700;
         line-height: 48px;
         text-align: center;
         color: #404040;
-
-        padding: 0 30px;
+        padding: 0 var(--subtitle-px);
         background-color: $Y1;
+      }
+
+      @include min-pad {
+        --title-size: 180px;
+        --title-line-height: 180px;
+        --subtitle-px: 30px;
+
+        max-width: 388px;
+      }
+
+      @include min-pc {
+        --title-size: 180px;
+        --title-line-height: 200px;
       }
     }
   }

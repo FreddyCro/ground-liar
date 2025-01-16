@@ -241,6 +241,7 @@ function handleStyle() {
 
   &__title-second {
     padding: 4px 12px;
+    margin: 0 25px;
     background-color: $Y1;
 
     @include min-pad {

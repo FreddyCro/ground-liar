@@ -9,7 +9,7 @@ defineProps({
 });
 
 const emptyContent = ref();
-const isFrontImgShow = ref(false);
+const isFrontImgShow = ref(true);
 const isFloatingTextShow = ref(false);
 
 onMounted(handleEmptyContent);

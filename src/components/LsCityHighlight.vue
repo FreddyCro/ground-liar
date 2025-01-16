@@ -35,6 +35,7 @@ onUnmounted(() => {
 });
 
 function onResize() {
+  containerHeight.value = window.innerHeight;
   deviceType.value = getDeviceType();
 }
 
