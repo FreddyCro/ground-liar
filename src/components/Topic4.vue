@@ -20,10 +20,10 @@ import str from '@/locales/topic4-taichung.json';
     <LsCityHighlight
       id="kaohsiung-hl"
       :imgs="[
-        'img/landswindlers_pic4_2',
-        'img/landswindlers_pic4_3',
-        'img/landswindlers_pic4_4',
-        'img/landswindlers_pic4_5',
+        { src: 'img/landswindlers_pic4_2' },
+        { src: 'img/landswindlers_pic4_3' },
+        { src: 'img/landswindlers_pic4_4' },
+        { src: 'img/landswindlers_pic4_5' },
       ]"
     >
       <template #content-1>
@@ -103,11 +103,13 @@ import str from '@/locales/topic4-taichung.json';
         </div>
         <h4 class="ls-h4">{{ str.taichungSection4Title }}</h4>
       </div>
-      <div class="ls-subsection ls-subsection--no-mt">
-        <div
-          class="flourish-embed flourish-chart"
-          data-src="visualisation/20500450"
-        ></div>
+      <div class="ls-taichung__large-chart-container">
+        <div class="ls-subsection ls-subsection--no-mt">
+          <div
+            class="flourish-embed flourish-chart"
+            data-src="visualisation/20500450"
+          ></div>
+        </div>
       </div>
       <div class="ls-container ls-article">
         <div class="ls-subsection ls-subsection--no-mb">
@@ -121,4 +123,26 @@ import str from '@/locales/topic4-taichung.json';
   </section>
 </template>
 
-<style scoped lang="scss"></style>
+<style lang="scss">
+.ls-taichung {
+  &__large-chart-container {
+    max-width: 1060px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .ls-citygi__text {
+    top: calc(50% - 48px);
+    width: 100%;
+
+    @include min-pad {
+      top: 53.5%;
+    }
+
+    @include min-pc {
+      top: calc(50% - 16px);
+      width: calc(50% - 8px);
+    }
+  }
+}
+</style>

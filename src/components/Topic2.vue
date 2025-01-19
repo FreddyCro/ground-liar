@@ -20,11 +20,11 @@ import str from '@/locales/topic2-kaohsiung.json';
     <LsCityHighlight
       id="kaohsiung-hl"
       :imgs="[
-        'img/landswindlers_pic2_2',
-        'img/landswindlers_pic2_3',
-        'img/landswindlers_pic2_4',
-        'img/landswindlers_pic2_5',
-        'img/landswindlers_pic2_6',
+        { src: 'img/landswindlers_pic2_2', bg: 'black' },
+        { src: 'img/landswindlers_pic2_3' },
+        { src: 'img/landswindlers_pic2_4' },
+        { src: 'img/landswindlers_pic2_5', bg: 'white' },
+        { src: 'img/landswindlers_pic2_6', bg: 'white' },
       ]"
     >
       <template #content-1>
@@ -34,7 +34,7 @@ import str from '@/locales/topic2-kaohsiung.json';
         <p>{{ str.kaoP2 }}</p>
       </template>
       <template #content-3>
-        <p>{{ str.kaoP3 }}</p>
+        <p class="ls-kaohsiung__hl-text-above-img">{{ str.kaoP3 }}</p>
         <LsPic
           src="img/landswindlers_card_icon"
           :srcset="['mob']"
@@ -76,9 +76,29 @@ import str from '@/locales/topic2-kaohsiung.json';
   </section>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss">
 .ls-kaohsiung {
   width: 100%;
   font-family: Noto Sans TC;
+
+  &__hl-text-above-img {
+    margin-bottom: 10px;
+  }
+
+  .ls-citygi__text {
+    top: 90px;
+    width: 100%;
+
+    @include min-pad {
+      top: 18.5%;
+    }
+
+    @include min-pc {
+      top: calc(50% - 16px);
+      left: auto;
+      right: 0;
+      width: calc(50% - 8px);
+    }
+  }
 }
 </style>

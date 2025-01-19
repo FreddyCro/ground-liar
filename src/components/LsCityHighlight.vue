@@ -35,6 +35,7 @@ onUnmounted(() => {
 });
 
 function onResize() {
+  containerHeight.value = window.innerHeight;
   deviceType.value = getDeviceType();
 }
 
@@ -74,11 +75,21 @@ function handleWordsTopUpdate(newWordsTop) {
     <!-- content -->
     <div class="ls-city-hl__container">
       <div class="ls-city-hl__key-visual-bg">
-        <LsPic
-          :src="imgs[activeList.findIndex((active) => active)]"
-          :webp="true"
-          :altby="`${id}-${activeList.findIndex((active) => active)}`"
-        />
+        <div
+          class="ls-city-hl__key-visual-pic-wrap"
+          :class="{
+            'ls-city-hl__key-visual-pic-wrap--bg-white':
+              imgs[activeList.findIndex((active) => active)].bg === 'white',
+            'ls-city-hl__key-visual-pic-wrap--bg-black':
+              imgs[activeList.findIndex((active) => active)].bg === 'black',
+          }"
+        >
+          <LsPic
+            :src="imgs[activeList.findIndex((active) => active)].src"
+            :webp="true"
+            :altby="`${id}-${activeList.findIndex((active) => active)}`"
+          />
+        </div>
       </div>
 
       <div ref="keyVisualWords" class="ls-city-hl__key-visual-contents">
@@ -113,6 +124,33 @@ function handleWordsTopUpdate(newWordsTop) {
       width: 100%;
       height: 100vh;
       object-fit: cover;
+    }
+  }
+
+  &__key-visual-pic-wrap {
+    width: 100%;
+    height: 100vh;
+
+    @media screen and (max-width: 1023px) {
+      &--bg-white,
+      &--bg-black {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+          height: auto;
+          object-fit: initial;
+        }
+      }
+    }
+
+    &--bg-white {
+      background-color: #fff;
+    }
+
+    &--bg-black {
+      background-color: #000;
     }
   }
 

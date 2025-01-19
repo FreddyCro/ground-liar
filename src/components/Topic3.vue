@@ -18,17 +18,20 @@ import str from '@/locales/topic3-problems.json';
         <div class="ls-paragraphs">
           <p>{{ str.gameQ1A1 }}</p>
           <p>{{ str.gameQ1A2 }}</p>
+          <p>{{ str.gameQ1A3 }}</p>
         </div>
         <h4 class="ls-h5">{{ str.gameQ2 }}</h4>
         <div class="ls-paragraphs">
           <p>{{ str.gameQ2A1 }}</p>
           <p>{{ str.gameQ2A2 }}</p>
+          <p>{{ str.gameQ2A3 }}</p>
         </div>
         <h4 class="ls-h5">{{ str.gameQ3 }}</h4>
         <div class="ls-paragraphs">
           <p>{{ str.gameQ3A1 }}</p>
           <p>{{ str.gameQ3A2 }}</p>
           <p>{{ str.gameQ3A3 }}</p>
+          <p>{{ str.gameQ3A4 }}</p>
         </div>
       </div>
 
@@ -42,10 +45,9 @@ import str from '@/locales/topic3-problems.json';
       <div class="ls-subsection">
         <h3 class="ls-h3">{{ str.roomTitle }}</h3>
         <h4 class="ls-h5">{{ str.roomSection1Title }}</h4>
-        <div class="ls-paragraphs">
-          <p>{{ str.roomSection1P1 }}</p>
-          <p>{{ str.roomSection1P2 }}</p>
-        </div>
+        <p>{{ str.roomSection1P1 }}</p>
+        <p>{{ str.roomSection1P2 }}</p>
+        <p>{{ str.roomSection1P3 }}</p>
       </div>
 
       <LsPic
@@ -57,15 +59,12 @@ import str from '@/locales/topic3-problems.json';
 
       <div class="ls-subsection">
         <h4 class="ls-h5">{{ str.roomSection2Title }}</h4>
-        <div class="ls-paragraphs">
-          <p>{{ str.roomSection2P1 }}</p>
-          <p>{{ str.roomSection2P2 }}</p>
-        </div>
+        <p>{{ str.roomSection2P1 }}</p>
+        <p>{{ str.roomSection2P2 }}</p>
+        <p>{{ str.roomSection2P3 }}</p>
         <h4 class="ls-h5">{{ str.roomSection3Title }}</h4>
-        <div class="ls-paragraphs">
-          <p>{{ str.roomSection3P1 }}</p>
-          <p>{{ str.roomSection3P2 }}</p>
-        </div>
+        <p>{{ str.roomSection3P1 }}</p>
+        <p>{{ str.roomSection3P2 }}</p>
       </div>
       <div class="ls-subsection">
         <h3 class="ls-h3">{{ str.flowTitle }}</h3>
@@ -85,11 +84,9 @@ import str from '@/locales/topic3-problems.json';
       </div>
       <div class="ls-subsection">
         <h3 class="ls-h3">{{ str.govTitle }}</h3>
-        <div class="ls-paragraphs">
-          <p>{{ str.govP1 }}</p>
-          <p>{{ str.govP2 }}</p>
-          <p>{{ str.govP3 }}</p>
-        </div>
+        <p>{{ str.govP1 }}</p>
+        <p>{{ str.govP2 }}</p>
+        <p>{{ str.govP3 }}</p>
       </div>
       <div
         class="flourish-embed flourish-chart"
@@ -97,12 +94,10 @@ import str from '@/locales/topic3-problems.json';
       ></div>
       <div class="ls-subsection">
         <h3 class="ls-h3">{{ str.taichungTitle }}</h3>
-        <div class="ls-paragraphs">
-          <p>{{ str.taichungP1 }}</p>
-          <p>{{ str.taichungP2 }}</p>
-          <p>{{ str.taichungP3 }}</p>
-          <p>{{ str.taichungP4 }}</p>
-        </div>
+        <p>{{ str.taichungP1 }}</p>
+        <p>{{ str.taichungP2 }}</p>
+        <p>{{ str.taichungP3 }}</p>
+        <p>{{ str.taichungP4 }}</p>
       </div>
       <div class="ls-subsection ls-subsection--no-mb">
         <div
