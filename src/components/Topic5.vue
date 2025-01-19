@@ -20,10 +20,10 @@ import str from '@/locales/topic5-tainan.json';
     <LsCityHighlight
       id="kaohsiung-hl"
       :imgs="[
-        { src: 'img/landswindlers_pic5_2' },
+        { src: 'img/landswindlers_pic5_2', bg: 'black' },
         { src: 'img/landswindlers_pic5_3' },
-        { src: 'img/landswindlers_pic5_4_1' },
         { src: 'img/landswindlers_pic5_4' },
+        { src: 'img/landswindlers_pic5_4_1' },
         { src: 'img/landswindlers_pic5_5' },
       ]"
     >

@@ -80,6 +80,8 @@ function handleWordsTopUpdate(newWordsTop) {
           :class="{
             'ls-city-hl__key-visual-pic-wrap--bg-white':
               imgs[activeList.findIndex((active) => active)].bg === 'white',
+            'ls-city-hl__key-visual-pic-wrap--bg-gray':
+              imgs[activeList.findIndex((active) => active)].bg === 'gray',
             'ls-city-hl__key-visual-pic-wrap--bg-black':
               imgs[activeList.findIndex((active) => active)].bg === 'black',
           }"
@@ -133,6 +135,7 @@ function handleWordsTopUpdate(newWordsTop) {
 
     @media screen and (max-width: 1023px) {
       &--bg-white,
+      &--bg-gray,
       &--bg-black {
         display: flex;
         align-items: center;
@@ -140,6 +143,7 @@ function handleWordsTopUpdate(newWordsTop) {
 
         img {
           height: auto;
+          max-height: 100vh;
           object-fit: initial;
         }
       }
@@ -147,6 +151,10 @@ function handleWordsTopUpdate(newWordsTop) {
 
     &--bg-white {
       background-color: #fff;
+    }
+
+    &--bg-gray {
+      background-color: #f6f6f6;
     }
 
     &--bg-black {
@@ -168,8 +176,8 @@ function handleWordsTopUpdate(newWordsTop) {
     /* height: 100vh; */
     height: 150vh;
     font-size: 20px;
-    font-weight: 700;
-    line-height: 32px;
+    font-weight: 600;
+    line-height: 40px;
     color: $color-font-white;
     opacity: 0;
     transition: 0.15s ease-in-out;

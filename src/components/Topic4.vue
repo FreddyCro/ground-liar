@@ -20,7 +20,7 @@ import str from '@/locales/topic4-taichung.json';
     <LsCityHighlight
       id="kaohsiung-hl"
       :imgs="[
-        { src: 'img/landswindlers_pic4_2' },
+        { src: 'img/landswindlers_pic4_2', bg: 'black' },
         { src: 'img/landswindlers_pic4_3' },
         { src: 'img/landswindlers_pic4_4' },
         { src: 'img/landswindlers_pic4_5' },
@@ -105,14 +105,20 @@ import str from '@/locales/topic4-taichung.json';
       </div>
       <div class="ls-taichung__large-chart-container">
         <div class="ls-subsection ls-subsection--no-mt">
-          <div
-            class="flourish-embed flourish-chart"
-            data-src="visualisation/20500450"
-          ></div>
+          <figure>
+            <div
+              class="flourish-embed flourish-chart"
+              data-src="visualisation/20500450"
+            ></div>
+            <figcaption class="ls-container ls-caption">
+              {{ str.taichungSection4ImgCaption }}
+            </figcaption>
+          </figure>
         </div>
       </div>
       <div class="ls-container ls-article">
         <div class="ls-subsection">
+          <h4 class="ls-h4">{{ str.taichungSection5Title }}</h4>
           <div
             class="flourish-embed flourish-chart"
             data-src="visualisation/20500490"

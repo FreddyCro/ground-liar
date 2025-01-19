@@ -23,8 +23,8 @@ import str from '@/locales/topic2-kaohsiung.json';
         { src: 'img/landswindlers_pic2_2', bg: 'black' },
         { src: 'img/landswindlers_pic2_3' },
         { src: 'img/landswindlers_pic2_4' },
-        { src: 'img/landswindlers_pic2_5', bg: 'white' },
-        { src: 'img/landswindlers_pic2_6', bg: 'white' },
+        { src: 'img/landswindlers_pic2_5', bg: 'gray' },
+        { src: 'img/landswindlers_pic2_6', bg: 'gray' },
       ]"
     >
       <template #content-1>

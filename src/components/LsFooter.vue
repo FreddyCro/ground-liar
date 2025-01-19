@@ -17,7 +17,7 @@ const CURRENT_YEAR = new Date().getFullYear();
 <template>
   <div class="ls-footer">
     <div class="ls-footer__info">
-      <NmdContainer>
+      <div class="ls-container">
         <NmdSeries>
           <template #context>{{ strFooter.seriesTitle }}</template>
           <NmdSeriesItem
@@ -33,12 +33,6 @@ const CURRENT_YEAR = new Date().getFullYear();
                 to: strFooter.series2Link,
                 ga: 'relatednews_2',
                 img: 'img/landswindlers_pic7_2',
-              },
-              {
-                title: strFooter.series3Title,
-                to: strFooter.series3Link,
-                ga: 'relatednews_3',
-                img: 'img/landswindlers_pic7_3',
               },
             ]"
             :key="item"
@@ -56,7 +50,7 @@ const CURRENT_YEAR = new Date().getFullYear();
             </template>
           </NmdSeriesItem>
         </NmdSeries>
-      </NmdContainer>
+      </div>
       <NmdAuthor>
         <template #採訪撰稿>{{ strFooter.editor1 }}</template>
         <template #統籌製作>{{ strFooter.editor2 }}</template>

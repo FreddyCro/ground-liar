@@ -12,7 +12,11 @@ import str from '@/locales/topic6-solutions.json';
         :webp="true"
         :alt="str.solutionsTitle1"
       />
-      <h2 class="ls-h3 ls-heading-title">{{ str.solutionsTitle1 }}</h2>
+      <h2 class="ls-h3 ls-heading-title ls-solutions__title">
+        <span class="ls-solutions__title-text">
+          {{ str.solutionsTitle1 }}
+        </span>
+      </h2>
     </div>
 
     <div class="ls-container ls-article">
@@ -74,5 +78,25 @@ import str from '@/locales/topic6-solutions.json';
 
 <style lang="scss">
 .ls-solutions {
+  &__title {
+    color: $B3;
+    text-align: center;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      padding: 6px 20px;
+      transform: translate(-20px, -6px);
+      background-color: $Y1;
+    }
+  }
+
+  &__title-text {
+    position: relative;
+  }
 }
 </style>

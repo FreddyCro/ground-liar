@@ -94,9 +94,9 @@ defineProps({
       @include min-pad {
         --title-size: 180px;
         --title-line-height: 180px;
-        --subtitle-px: 30px;
+        --subtitle-px: 20px;
 
-        max-width: 388px;
+        max-width: 408px;
       }
 
       @include min-pc {

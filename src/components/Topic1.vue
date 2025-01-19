@@ -73,23 +73,16 @@ function handleStyle() {
         </div>
 
         <!-- p1 -->
-        <div class="ls-intro-hero__p-container">
-          <div
-            class="ls-intro-hero__p-wrap"
-            :class="{
-              'ls-intro-hero__p-wrap--show': isParagraph1Show,
-            }"
-          >
-            <p class="ls-intro-hero__p">
-              {{ str.introP1 }}
-            </p>
-          </div>
+        <div class="ls-intro-hero__p-container ls-article">
           <div
             class="ls-intro-hero__p-wrap"
             :class="{
               'ls-intro-hero__p-wrap--show': !isParagraph1Show,
             }"
           >
+            <p class="ls-intro-hero__p">
+              {{ str.introP1 }}
+            </p>
             <p class="ls-intro-hero__p">
               {{ str.introP2 }}
             </p>
@@ -242,11 +235,13 @@ function handleStyle() {
   &__title-second {
     padding: 4px 12px;
     margin: 0 25px;
-    background-color: $Y1;
+    font-size: 18px;
+    line-height: 30px;
+    background-color: rgba($color: $Y1, $alpha: 0.9);
 
     @include min-pad {
-      font-size: 20px;
-      line-height: 32px;
+      font-size: 18px;
+      line-height: 24px;
     }
   }
 
@@ -263,25 +258,35 @@ function handleStyle() {
 
   &__p-wrap {
     position: absolute;
-    left: 50%;
+    left: 0;
     width: 100%;
     display: flex;
     flex-direction: column;
-    bottom: 60px;
-    padding: 10px 20px;
+    bottom: 0;
+    padding: 60px 26px;
     opacity: 0;
     pointer-events: none;
-    background-color: rgba($color: #000000, $alpha: 0.85);
+    background-color: $B1;
     backdrop-filter: blur(10px);
-    transform: translateX(-50%);
+    transform: translate(0, 100%);
+    transition: 0.5s ease-in-out;
 
     &--show {
       opacity: 1;
+      transform: translate(0, 0);
       pointer-events: auto;
     }
 
-    @include min-pad {
-      width: 470px;
+    @include min-pc {
+      padding: 80px 26px;
+    }
+
+    p {
+      margin: 0 auto;
+
+      @include min-pad {
+        max-width: 620px;
+      }
     }
   }
 
@@ -293,9 +298,10 @@ function handleStyle() {
 }
 
 .ls-intro-anchor {
+  position: relative;
+  padding: 60px 20px;
   background-color: #000;
   color: $B6;
-  padding: 60px 20px;
 
   @include min-pad {
     padding: 60px 40px;
