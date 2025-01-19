@@ -47,20 +47,16 @@ function onResize() {
   <video
     class="ls-vid"
     :class="classname || ''"
+    :src="`${VITE_ASSETS_PATH}${src[deviceType]}.mp4`"
+    type="video/mp4"
+    :poster="poster ? `${VITE_ASSETS_PATH}${poster[deviceType]}.jpg` : ''"
     playsinline
     :autoplay="autoplay"
     :loop="loop"
-    type="video/mp4"
     :muted="muted"
-    :poster="poster ? `${VITE_ASSETS_PATH}${poster[deviceType]}.jpg` : ''"
     :preload="preload"
     :aria-label="ariaLabel"
-  >
-    <source
-      :src="`${VITE_ASSETS_PATH}${src[deviceType]}.mp4`"
-      type="video/mp4"
-    />
-  </video>
+  />
 </template>
 
 <style lang="scss">
