@@ -177,7 +177,7 @@ function handleWordsTopUpdate(newWordsTop) {
     height: 150vh;
     font-size: 20px;
     font-weight: 600;
-    line-height: 40px;
+    line-height: 39px;
     color: $color-font-white;
     opacity: 0;
     transition: 0.15s ease-in-out;
