@@ -119,9 +119,15 @@ import str from '@/locales/topic5-tainan.json';
             </figcaption>
           </figure>
         </div>
-        <div class="ls-subsection ls-subsection--no-mb">
+        <div class="ls-subsection">
           <p>{{ str.tainanSection2P3 }}</p>
           <p>{{ str.tainanSection2P4 }}</p>
+        </div>
+        <div class="ls-subsection ls-subsection--no-mb">
+          <h4 class="ls-h4">{{ str.govTitle }}</h4>
+          <p>{{ str.govP1 }}</p>
+          <p>{{ str.govP2 }}</p>
+          <p>{{ str.govP3 }}</p>
         </div>
       </div>
     </div>

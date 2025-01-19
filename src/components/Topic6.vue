@@ -47,7 +47,6 @@ import str from '@/locales/topic6-solutions.json';
         <p>{{ str.solutionsSection1P2 }}</p>
         <p>{{ str.solutionsSection1P3 }}</p>
       </div>
-
       <div class="ls-subsection">
         <figure>
           <LsPic
@@ -63,6 +62,12 @@ import str from '@/locales/topic6-solutions.json';
       </div>
       <p>{{ str.solutionsSection1P4 }}</p>
       <p>{{ str.solutionsSection1P5 }}</p>
+      <div class="ls-subsection ls-subsection--no-mb">
+        <h4 class="ls-h4">{{ str.govTitle }}</h4>
+        <p>{{ str.govP1 }}</p>
+        <p>{{ str.govP2 }}</p>
+        <p>{{ str.govP3 }}</p>
+      </div>
     </div>
   </section>
 </template>

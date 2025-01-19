@@ -62,6 +62,8 @@ import str from '@/locales/topic3-problems.json';
         <p>{{ str.roomSection2P1 }}</p>
         <p>{{ str.roomSection2P2 }}</p>
         <p>{{ str.roomSection2P3 }}</p>
+      </div>
+      <div class="ls-subsection">
         <h4 class="ls-h5">{{ str.roomSection3Title }}</h4>
         <p>{{ str.roomSection3P1 }}</p>
         <p>{{ str.roomSection3P2 }}</p>

@@ -61,16 +61,25 @@ import str from '@/locales/topic2-kaohsiung.json';
     <!-- article -->
     <div class="ls-section ls-section--no-pt">
       <div class="ls-container ls-article">
-        <h3 class="ls-h3">{{ str.landlordTitle }}</h3>
-        <p>{{ str.landlordP1 }}</p>
-        <p>{{ str.landlordP2 }}</p>
-        <p>{{ str.landlordP3 }}</p>
-        <p>{{ str.landlordP4 }}</p>
-        <p>{{ str.landlordP5 }}</p>
-        <p>{{ str.landlordP6 }}</p>
-        <p>{{ str.landlordP7 }}</p>
-        <p>{{ str.landlordP8 }}</p>
-        <p>{{ str.landlordP9 }}</p>
+        <div class="ls-subsection">
+          <h3 class="ls-h3">{{ str.landlordTitle }}</h3>
+          <p>{{ str.landlordP1 }}</p>
+          <p>{{ str.landlordP2 }}</p>
+          <p>{{ str.landlordP3 }}</p>
+          <p>{{ str.landlordP4 }}</p>
+          <p>{{ str.landlordP5 }}</p>
+          <p>{{ str.landlordP6 }}</p>
+          <p>{{ str.landlordP7 }}</p>
+          <p>{{ str.landlordP8 }}</p>
+          <p>{{ str.landlordP9 }}</p>
+        </div>
+        <div class="ls-subsection ls-subsection--no-mb">
+          <h4 class="ls-h4">{{ str.govTitle }}</h4>
+          <p>{{ str.govP1 }}</p>
+          <p>{{ str.govP2 }}</p>
+          <p>{{ str.govP3 }}</p>
+          <p>{{ str.govP4 }}</p>
+        </div>
       </div>
     </div>
   </section>

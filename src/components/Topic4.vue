@@ -112,11 +112,16 @@ import str from '@/locales/topic4-taichung.json';
         </div>
       </div>
       <div class="ls-container ls-article">
-        <div class="ls-subsection ls-subsection--no-mb">
+        <div class="ls-subsection">
           <div
             class="flourish-embed flourish-chart"
             data-src="visualisation/20500490"
           ></div>
+        </div>
+        <div class="ls-subsection ls-subsection--no-mb">
+          <h4 class="ls-h4">{{ str.govTitle }}</h4>
+          <p>{{ str.govP1 }}</p>
+          <p>{{ str.govP2 }}</p>
         </div>
       </div>
     </div>
