@@ -59,7 +59,7 @@ function onClick(e) {
           strHeader.menuItem6Link,
         ]"
         :key="item"
-        :is-current="index === 0 ? true : false"
+        :is-current="false"
         :to="item"
       >
         {{ strHeader[`menuItem${index + 1}Title`] }}

@@ -6,7 +6,7 @@ import str from '@/locales/topic1-intro.json';
 
 const root = ref<HTMLElement | null>(null);
 const heroIndicator = ref<HTMLElement | null>(null);
-const isParagraph1Show = ref(false);
+const isParagraphShow = ref(false);
 const innerHeight = window.innerHeight;
 
 onMounted(() => {
@@ -27,9 +27,9 @@ function handleObserver() {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        isParagraph1Show.value = false;
+        isParagraphShow.value = true;
       } else {
-        isParagraph1Show.value = true;
+        isParagraphShow.value = false;
       }
     });
   });
@@ -77,7 +77,7 @@ function handleStyle() {
           <div
             class="ls-intro-hero__p-wrap"
             :class="{
-              'ls-intro-hero__p-wrap--show': !isParagraph1Show,
+              'ls-intro-hero__p-wrap--show': isParagraphShow,
             }"
           >
             <p class="ls-intro-hero__p">
@@ -291,7 +291,6 @@ function handleStyle() {
   }
 
   &__p {
-    text-align: center;
     color: #fff;
     transition: opacity 0.15s ease-in-out;
   }

@@ -12,7 +12,7 @@ import str from '@/locales/topic6-solutions.json';
         :webp="true"
         :alt="str.solutionsTitle1"
       />
-      <h2 class="ls-h3 ls-heading-title ls-solutions__title">
+      <h2 class="ls-h4 ls-heading-title ls-solutions__title">
         <span class="ls-solutions__title-text">
           {{ str.solutionsTitle1 }}
         </span>
@@ -79,8 +79,10 @@ import str from '@/locales/topic6-solutions.json';
 <style lang="scss">
 .ls-solutions {
   &__title {
+    max-width: 260px;
     color: $B3;
     text-align: center;
+    text-shadow: none;
 
     &::before {
       content: '';

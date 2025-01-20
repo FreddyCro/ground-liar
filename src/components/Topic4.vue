@@ -94,6 +94,12 @@ import str from '@/locales/topic4-taichung.json';
           </figure>
         </div>
         <div class="ls-subsection">
+          <h4 class="ls-h4">{{ str.govTitle }}</h4>
+          <p>{{ str.govP1 }}</p>
+          <p>{{ str.govP2 }}</p>
+          <p>{{ str.govP3 }}</p>
+        </div>
+        <div class="ls-subsection">
           <h3 class="ls-h3">{{ str.taichungSection3Title }}</h3>
           <p>{{ str.taichungSection3P1 }}</p>
           <p>{{ str.taichungSection3P2 }}</p>
@@ -117,17 +123,12 @@ import str from '@/locales/topic4-taichung.json';
         </div>
       </div>
       <div class="ls-container ls-article">
-        <div class="ls-subsection">
+        <div class="ls-subsection ls-subsection--no-mb">
           <h4 class="ls-h4">{{ str.taichungSection5Title }}</h4>
           <div
             class="flourish-embed flourish-chart"
             data-src="visualisation/20500490"
           ></div>
-        </div>
-        <div class="ls-subsection ls-subsection--no-mb">
-          <h4 class="ls-h4">{{ str.govTitle }}</h4>
-          <p>{{ str.govP1 }}</p>
-          <p>{{ str.govP2 }}</p>
         </div>
       </div>
     </div>
