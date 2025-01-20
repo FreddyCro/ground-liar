@@ -196,6 +196,7 @@ function handleStyle() {
       width: 100%;
       /* height: var(--ls-intro-vid-height); */
       height: 100vh;
+      max-height: var(--init-screen-height);
       object-fit: cover;
     }
   }
@@ -205,6 +206,7 @@ function handleStyle() {
     top: 0;
     width: 100%;
     height: 100vh;
+    max-height: var(--init-screen-height);
   }
 
   &__title {
@@ -250,6 +252,7 @@ function handleStyle() {
     position: absolute;
     width: 100%;
     height: 100vh;
+    max-height: var(--init-screen-height);
   }
 
   &__p-container {

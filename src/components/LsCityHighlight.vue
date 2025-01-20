@@ -53,7 +53,7 @@ function handleInitialStyle() {
 
     root.value.style.setProperty(
       '--ls-city-hl-init-screen-height',
-      window.matchMedia('(min-width: 763px)').matches
+      window.matchMedia('(min-width: 1024px)').matches
         ? '100vh'
         : `${initialDeviceScreenHeight.value}px`,
     );
