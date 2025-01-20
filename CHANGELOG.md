@@ -1,5 +1,19 @@
 # CHANGELOG
 
+## 0.5.0
+
+- 修復 checkpoint 2 的 bugs
+- nmdap
+
+## 0.4.0
+
+- 開發，checkpoint 2
+- nmdap
+
+## 0.3.0
+
+開發，checkpoint 1
+
 ## 0.2.0 ( 2025-01-13 )
 
 ### feat
