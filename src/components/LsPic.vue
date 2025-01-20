@@ -63,7 +63,7 @@ const parsedMedia = computed(() => {
   const media = [];
 
   if (props.srcset.includes('pc')) {
-    media.push('(min-width: 1024px)');
+    media.push('(min-width: 1280px)');
   }
 
   if (props.srcset.includes('pad')) {

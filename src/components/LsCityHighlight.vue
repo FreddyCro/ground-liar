@@ -18,6 +18,7 @@ const baseVideoUrl = 'https://vip.udn.com/newmedia/2025/landswindlers/videos';
 // 畫面寬度(不包含滾動軸)
 const { top: wordsTop } = useElementBounding(keyVisualWords);
 const deviceType = ref(getDeviceType());
+const initialDeviceScreenHeight = ref(window.innerHeight);
 
 watch(wordsTop, handleWordsTopUpdate);
 
@@ -41,9 +42,28 @@ function onResize() {
 
 function handleInitialStyle() {
   if (root.value && props.imgs) {
+    // if (window.innerWidth > 768 || !inapp.isInApp) {
+    //   this.$store.commit('setFullVideoHeight', '100vh');
+    // } else {
+    //   this.$store.commit(
+    //     'setFullVideoHeight',
+    //     `${this.originalWindowHeight}px`,
+    //   );
+    // }
+
+    root.value.style.setProperty(
+      '--ls-city-hl-init-screen-height',
+      window.matchMedia('(min-width: 763px)').matches
+        ? '100vh'
+        : `${initialDeviceScreenHeight.value}px`,
+    );
     root.value.style.setProperty(
       '--ls-city-hl-container-height',
       `${(props.imgs.length + 0.5) * 150}vh`,
+    );
+    root.value.style.setProperty(
+      '--ls-city-hl-container-max-height',
+      `${(props.imgs.length + 0.5) * initialDeviceScreenHeight.value * 1.5}px`,
     );
   }
 }
@@ -126,6 +146,10 @@ function handleWordsTopUpdate(newWordsTop) {
       width: 100%;
       height: 100vh;
       object-fit: cover;
+
+      @media screen and (max-width: 1023px) {
+        max-height: var(--ls-city-hl-init-screen-height);
+      }
     }
   }
 
@@ -134,6 +158,8 @@ function handleWordsTopUpdate(newWordsTop) {
     height: 100vh;
 
     @media screen and (max-width: 1023px) {
+      max-height: var(--ls-city-hl-init-screen-height);
+
       &--bg-white,
       &--bg-gray,
       &--bg-black {
@@ -165,6 +191,10 @@ function handleWordsTopUpdate(newWordsTop) {
   &__container {
     position: relative;
     height: var(--ls-city-hl-container-height);
+
+    @media screen and (max-width: 1023px) {
+      max-height: var(--ls-city-hl-container-max-height);
+    }
   }
 
   &__key-visual-contents {
