@@ -125,12 +125,14 @@ function handleEmptyContent() {
     max-width: 1060px;
     margin: 0 auto;
     height: 300vh;
+    max-height: calc(var(--init-screen-height) * 3);
   }
 
   .topic2_gridCard_content {
     position: sticky;
     top: 0;
-    min-height: 100vh;
+    min-height: var(--init-screen-height);
+    /* min-height: 100vh; */
     display: flex;
     justify-content: center;
     align-items: center;
