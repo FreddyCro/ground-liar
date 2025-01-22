@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.6.0
+
+修復 nmdap 的 bugs
+
 ## 0.5.0
 
 - 修復 checkpoint 2 的 bugs
