@@ -90,23 +90,26 @@ function handleWordsTopUpdate(newWordsTop) {
     <!-- content -->
     <div class="ls-city-hl__container">
       <div class="ls-city-hl__key-visual-bg">
+        <!-- TODO -->
+        <!-- imgs[activeList.findIndex((active) => active)]   -->
+        <!-- 'ls-city-hl__key-visual-pic-wrap--active': activeList[index], -->
         <div
+          v-for="(img, index) in imgs"
+          v-show="activeList[index]"
+          :key="img"
           class="ls-city-hl__key-visual-pic-wrap"
           :class="{
-            'ls-city-hl__key-visual-pic-wrap--bg-white':
-              imgs[activeList.findIndex((active) => active)].bg === 'white',
-            'ls-city-hl__key-visual-pic-wrap--bg-gray':
-              imgs[activeList.findIndex((active) => active)].bg === 'gray',
-            'ls-city-hl__key-visual-pic-wrap--bg-black':
-              imgs[activeList.findIndex((active) => active)].bg === 'black',
+            'ls-city-hl__key-visual-pic-wrap--bg-white': img.bg === 'white',
+            'ls-city-hl__key-visual-pic-wrap--bg-gray': img.bg === 'gray',
+            'ls-city-hl__key-visual-pic-wrap--bg-black': img.bg === 'black',
           }"
         >
           <LsPic
-            :src="imgs[activeList.findIndex((active) => active)].src"
+            :src="img.src"
             :webp="true"
             :altby="`${id}-${activeList.findIndex((active) => active)}`"
-            :width="imgs[activeList.findIndex((active) => active)].w"
-            :height="imgs[activeList.findIndex((active) => active)].h"
+            :width="img.w"
+            :height="img.h"
           />
         </div>
       </div>
@@ -153,6 +156,7 @@ function handleWordsTopUpdate(newWordsTop) {
   &__key-visual-pic-wrap {
     width: 100%;
     height: 100vh;
+    transition: 0.15s ease-in-out;
 
     @media screen and (max-width: 1023px) {
       max-height: var(--ls-city-hl-init-screen-height);
@@ -171,6 +175,10 @@ function handleWordsTopUpdate(newWordsTop) {
         }
       }
     }
+
+    /* &--active {
+      opacity: 1;
+    } */
 
     &--bg-white {
       background-color: #fff;
