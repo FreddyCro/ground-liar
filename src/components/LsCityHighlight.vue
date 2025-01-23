@@ -60,8 +60,8 @@ function handleInitialStyle() {
 
 function handleWordsTopUpdate(newWordsTop) {
   const gap = containerHeight.value * 1.5;
-  const offset = 0.5;
-  // const offset = 0.75;
+  // const offset = 0.5;
+  const offset = 0.75;
 
   // step: 1~n
   const steps = props.imgs.slice(1).map((_, index) => {
@@ -196,8 +196,8 @@ function handleWordsTopUpdate(newWordsTop) {
   }
 
   &__key-visual-content {
-    // height: 100vh;
     height: 150vh;
+    max-height: calc(var(--ls-city-hl-container-height) * 1.5);
     font-size: 20px;
     font-weight: 600;
     line-height: 39px;
