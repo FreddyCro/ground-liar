@@ -1,5 +1,5 @@
 <script setup>
-import { computed, onMounted, onUnmounted, ref, watch } from 'vue';
+import { onMounted, onUnmounted, ref, watch } from 'vue';
 import { useElementBounding } from '@vueuse/core';
 import LsPic from './LsPic.vue';
 import { getDeviceType } from '@/utils/get-device';
@@ -13,7 +13,6 @@ const root = ref();
 const containerHeight = ref(window.innerHeight);
 const keyVisualWords = ref();
 const activeList = ref(props.imgs ? props.imgs.map(() => 1) : []);
-const baseVideoUrl = 'https://vip.udn.com/newmedia/2025/landswindlers/videos';
 
 // 畫面寬度(不包含滾動軸)
 const { top: wordsTop } = useElementBounding(keyVisualWords);
@@ -42,15 +41,6 @@ function onResize() {
 
 function handleInitialStyle() {
   if (root.value && props.imgs) {
-    // if (window.innerWidth > 768 || !inapp.isInApp) {
-    //   this.$store.commit('setFullVideoHeight', '100vh');
-    // } else {
-    //   this.$store.commit(
-    //     'setFullVideoHeight',
-    //     `${this.originalWindowHeight}px`,
-    //   );
-    // }
-
     root.value.style.setProperty(
       '--ls-city-hl-init-screen-height',
       window.matchMedia('(min-width: 1024px)').matches
@@ -70,7 +60,8 @@ function handleInitialStyle() {
 
 function handleWordsTopUpdate(newWordsTop) {
   const gap = containerHeight.value * 1.5;
-  const offset = 0.75;
+  const offset = 0.5;
+  // const offset = 0.75;
 
   // step: 1~n
   const steps = props.imgs.slice(1).map((_, index) => {
@@ -110,6 +101,8 @@ function handleWordsTopUpdate(newWordsTop) {
             :src="imgs[activeList.findIndex((active) => active)].src"
             :webp="true"
             :altby="`${id}-${activeList.findIndex((active) => active)}`"
+            :width="imgs[activeList.findIndex((active) => active)].w"
+            :height="imgs[activeList.findIndex((active) => active)].h"
           />
         </div>
       </div>
@@ -203,7 +196,7 @@ function handleWordsTopUpdate(newWordsTop) {
   }
 
   &__key-visual-content {
-    /* height: 100vh; */
+    // height: 100vh;
     height: 150vh;
     font-size: 20px;
     font-weight: 600;

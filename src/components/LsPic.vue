@@ -38,7 +38,8 @@ const props = defineProps({
   },
   loading: {
     type: String,
-    default: 'lazy',
+    default: 'eager',
+    // default: 'lazy',
   },
   use2x: {
     type: Boolean,

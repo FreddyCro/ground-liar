@@ -40,6 +40,8 @@ import str from '@/locales/topic3-problems.json';
         :srcset="['mob']"
         :webp="true"
         :alt="str.roomTitle"
+        width="620"
+        height="450"
       />
 
       <div class="ls-subsection">
@@ -55,6 +57,8 @@ import str from '@/locales/topic3-problems.json';
         :srcset="['mob']"
         :webp="true"
         :alt="str.roomTitle"
+        width="620"
+        height="420"
       />
 
       <div class="ls-subsection">
@@ -77,6 +81,8 @@ import str from '@/locales/topic3-problems.json';
               src="img/landswindlers_pic3_4"
               :webp="true"
               :alt="str.roomTitle"
+              width="362"
+              height="1100"
             />
             <figcaption class="ls-caption">
               {{ str.flowImgDesc }}

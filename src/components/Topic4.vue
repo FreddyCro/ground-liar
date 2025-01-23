@@ -66,6 +66,8 @@ import str from '@/locales/topic4-taichung.json';
               :srcset="['mob']"
               :webp="true"
               :alt="str.taichungSection1ImgCaption"
+              width="620"
+              height="450"
             />
             <figcaption class="ls-caption">
               {{ str.taichungSection1ImgCaption }}
@@ -87,6 +89,8 @@ import str from '@/locales/topic4-taichung.json';
               :srcset="['mob']"
               :webp="true"
               :alt="str.taichungSection1ImgCaption"
+              width="620"
+              height="450"
             />
             <figcaption class="ls-caption">
               {{ str.taichungSection2ImgCaption }}

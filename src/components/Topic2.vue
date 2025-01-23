@@ -20,11 +20,11 @@ import str from '@/locales/topic2-kaohsiung.json';
     <LsCityHighlight
       id="kaohsiung-hl"
       :imgs="[
-        { src: 'img/landswindlers_pic2_2', bg: 'black' },
-        { src: 'img/landswindlers_pic2_3' },
-        { src: 'img/landswindlers_pic2_4' },
-        { src: 'img/landswindlers_pic2_5', bg: 'gray' },
-        { src: 'img/landswindlers_pic2_6', bg: 'gray' },
+        { src: 'img/landswindlers_pic2_2', bg: 'black', w: 720, h: 1280 },
+        { src: 'img/landswindlers_pic2_3', w: 720, h: 1280 },
+        { src: 'img/landswindlers_pic2_4', w: 720, h: 1280 },
+        { src: 'img/landswindlers_pic2_5', bg: 'gray', w: 720, h: 1280 },
+        { src: 'img/landswindlers_pic2_6', bg: 'gray', w: 720, h: 1280 },
       ]"
     >
       <template #content-1>
@@ -41,6 +41,8 @@ import str from '@/locales/topic2-kaohsiung.json';
           ext="svg"
           :use2x="false"
           :alt="str.kaoP3"
+          width="430"
+          height="120"
         />
       </template>
       <template #content-4>

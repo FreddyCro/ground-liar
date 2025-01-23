@@ -122,18 +122,24 @@ function handleStyle() {
                 title: str.introAnchor1Title,
                 desc: str.introAnchor1Desc,
                 link: '#Kaohsiung',
+                w: 362,
+                h: 250,
               },
               {
                 img: 'img/landswindlers_pic1_2',
                 title: str.introAnchor2Title,
                 desc: str.introAnchor2Desc,
                 link: '#Taichung',
+                w: 362,
+                h: 250,
               },
               {
                 img: 'img/landswindlers_pic1_3',
                 title: str.introAnchor3Title,
                 desc: str.introAnchor3Desc,
                 link: '#Tainan',
+                w: 362,
+                h: 250,
               },
             ]"
             :key="item.title"
@@ -147,6 +153,8 @@ function handleStyle() {
                 :srcset="['mob', 'pad']"
                 :use2x="true"
                 :webp="true"
+                :width="item.w"
+                :height="item.h"
               />
             </div>
             <h3 class="ls-h4 ls-intro-anchor__item-title">
