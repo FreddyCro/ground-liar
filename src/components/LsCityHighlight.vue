@@ -41,6 +41,10 @@ function onResize() {
 
 function handleInitialStyle() {
   if (root.value && props.imgs) {
+    // add offset for last img
+    // const offset = 0.5;
+    const offset = 1;
+
     root.value.style.setProperty(
       '--ls-city-hl-init-screen-height',
       window.matchMedia('(min-width: 1024px)').matches
@@ -49,11 +53,11 @@ function handleInitialStyle() {
     );
     root.value.style.setProperty(
       '--ls-city-hl-container-height',
-      `${(props.imgs.length + 0.5) * 150}vh`,
+      `${(props.imgs.length + offset) * 150}vh`,
     );
     root.value.style.setProperty(
       '--ls-city-hl-container-max-height',
-      `${(props.imgs.length + 0.5) * initialDeviceScreenHeight.value * 1.5}px`,
+      `${(props.imgs.length + offset) * initialDeviceScreenHeight.value * 1.5}px`,
     );
   }
 }
@@ -68,7 +72,7 @@ function handleWordsTopUpdate(newWordsTop) {
     const start = -gap * (index + 1 - offset);
     const end = -gap * (index + 2 - offset);
     const endOffset =
-      props.imgs.length - 2 === index ? window.innerHeight * 1 : 0;
+      props.imgs.length - 2 === index ? window.innerHeight * 2 : 0;
 
     return newWordsTop <= start && newWordsTop >= end - endOffset;
   });
@@ -207,6 +211,11 @@ function handleWordsTopUpdate(newWordsTop) {
 
     &--active {
       opacity: 1;
+    }
+
+    &:last-child {
+      height: 250vh;
+      max-height: calc(var(--ls-city-hl-container-height) * 2.5);
     }
   }
 
