@@ -89,9 +89,6 @@ function handleStyle() {
             <p class="ls-intro-hero__p">
               {{ str.introP3 }}
             </p>
-            <p class="ls-intro-hero__p">
-              {{ str.introP4 }}
-            </p>
           </div>
         </div>
       </div>

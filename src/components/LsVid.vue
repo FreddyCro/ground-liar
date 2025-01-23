@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, onUnmounted, ref } from 'vue';
+import { onUnmounted, ref } from 'vue';
 import { getDeviceType } from '@/utils/get-device';
 
 interface Props {
@@ -63,5 +63,6 @@ function onResize() {
 .ls-vid {
   width: 100%;
   max-width: 100%;
+  pointer-events: none;
 }
 </style>
