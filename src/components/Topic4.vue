@@ -125,10 +125,17 @@ import str from '@/locales/topic4-taichung.json';
       <div class="ls-container ls-article">
         <div class="ls-subsection ls-subsection--no-mb">
           <h4 class="ls-h4">{{ str.taichungSection5Title }}</h4>
-          <div
-            class="flourish-embed flourish-chart"
-            data-src="visualisation/20500490"
-          ></div>
+          <figure>
+            <div
+              class="flourish-embed flourish-chart"
+              data-src="visualisation/20500490"
+            ></div>
+            <figcaption class="ls-caption">
+              <div>{{ str.taichungSection5ImgCaption1 }}</div>
+              <div>{{ str.taichungSection5ImgCaption2 }}</div>
+              <div>{{ str.taichungSection5ImgCaption3 }}</div>
+            </figcaption>
+          </figure>
         </div>
       </div>
     </div>

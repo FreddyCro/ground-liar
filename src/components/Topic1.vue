@@ -86,6 +86,12 @@ function handleStyle() {
             <p class="ls-intro-hero__p">
               {{ str.introP2 }}
             </p>
+            <p class="ls-intro-hero__p">
+              {{ str.introP3 }}
+            </p>
+            <p class="ls-intro-hero__p">
+              {{ str.introP4 }}
+            </p>
           </div>
         </div>
       </div>
@@ -291,6 +297,7 @@ function handleStyle() {
   }
 
   &__p {
+    width: 100%;
     color: #fff;
     transition: opacity 0.15s ease-in-out;
   }
@@ -383,7 +390,7 @@ function handleStyle() {
 
     &:hover {
       .ls-intro-anchor__item-header img {
-        transform: scale(1.2);
+        transform: scale(1.1);
       }
 
       .ls-intro-anchor__item-arrow {

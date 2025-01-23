@@ -191,5 +191,6 @@ function handleImage({ src, srcset, ext, use2x, usePrefix }) {
 .ls-pic-img {
   width: 100%;
   height: auto;
+  pointer-events: none;
 }
 </style>

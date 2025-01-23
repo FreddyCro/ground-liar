@@ -71,6 +71,9 @@ import str from '@/locales/topic6-solutions.json';
         <p>{{ str.govP1 }}</p>
         <p>{{ str.govP2 }}</p>
         <p>{{ str.govP3 }}</p>
+        <p>{{ str.govP4 }}</p>
+        <p>{{ str.govP5 }}</p>
+        <p>{{ str.govP6 }}</p>
       </div>
     </div>
   </section>
@@ -83,6 +86,10 @@ import str from '@/locales/topic6-solutions.json';
     color: $B3;
     text-align: center;
     text-shadow: none;
+
+    @include min-pad {
+      max-width: none;
+    }
 
     &::before {
       content: '';

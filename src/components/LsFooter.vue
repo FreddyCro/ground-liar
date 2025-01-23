@@ -9,6 +9,7 @@ import {
   NmdToTop,
 } from '@udn-digital-center/common-components';
 import LsPic from './LsPic.vue';
+import { shareURL_fb, shareURL_line, shareURL_twitter } from '@/utils/share';
 import strFooter from '@/locales/footer.json';
 
 const CURRENT_YEAR = new Date().getFullYear();
