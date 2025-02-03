@@ -34,7 +34,8 @@ export default defineConfig(({ mode }) => {
             title: meta.metaTitle,
             description: meta.metaDesc,
             keywords: meta.metaKeywords,
-            url: meta.metaURL,
+            url: VITE_URL,
+            // url: meta.metaURL,
             image: meta.metaImage,
             robot:
               VITE_MODE === 'production'
