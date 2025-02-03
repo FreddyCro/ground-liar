@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.8.0
+
+建立布署 vip 環境
+
 ## 0.7.0
 
 - 修復 nmdap 的 bugs

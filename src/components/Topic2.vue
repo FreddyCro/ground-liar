@@ -41,8 +41,8 @@ import str from '@/locales/topic2-kaohsiung.json';
           ext="svg"
           :use2x="false"
           :alt="str.kaoP3"
-          width="430"
-          height="120"
+          :width="430"
+          :height="120"
         />
       </template>
       <template #content-4>
@@ -75,6 +75,16 @@ import str from '@/locales/topic2-kaohsiung.json';
           <p>{{ str.landlordP8 }}</p>
           <p>{{ str.landlordP9 }}</p>
         </div>
+
+        <LsPic
+          src="img/landswindlers_pic2_9"
+          :srcset="['mob']"
+          :webp="true"
+          :alt="str.roomTitle"
+          :width="620"
+          :height="450"
+        />
+
         <div class="ls-subsection ls-subsection--no-mb">
           <h4 class="ls-h4">{{ str.govTitle }}</h4>
           <p>{{ str.govP1 }}</p>

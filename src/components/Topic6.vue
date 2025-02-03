@@ -33,8 +33,8 @@ import str from '@/locales/topic6-solutions.json';
             :srcset="['mob']"
             :webp="true"
             :alt="str.solutionsImgDesc1"
-            width="620"
-            height="450"
+            :width="620"
+            :height="450"
           />
           <figcaption class="ls-caption">
             {{ str.solutionsImgDesc1 }}
@@ -60,8 +60,8 @@ import str from '@/locales/topic6-solutions.json';
             :srcset="['mob']"
             :webp="true"
             :alt="str.solutionsImgDesc2"
-            width="620"
-            height="450"
+            :width="620"
+            :height="450"
           />
           <figcaption class="ls-caption">
             {{ str.solutionsImgDesc2 }}
