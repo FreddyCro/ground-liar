@@ -14,10 +14,18 @@ onMounted(() => {
   handleStyle();
 });
 
-function onAnchorClick(link: string) {
+function onAnchorClick(link: string, title: string) {
   // scroll to anchor smoothly
   document.querySelector(link)?.scrollIntoView({
     behavior: 'smooth',
+  });
+
+  // GA
+  window.ga('send', {
+    hitType: 'event',
+    eventCategory: 'first_screen',
+    eventAction: 'click_anchor',
+    eventLabel: title,
   });
 }
 
@@ -141,7 +149,7 @@ function handleStyle() {
             ]"
             :key="item.title"
             class="ls-intro-anchor__item"
-            @click="onAnchorClick(item.link)"
+            @click="onAnchorClick(item.link, item.title)"
           >
             <div class="ls-intro-anchor__item-header">
               <LsPic

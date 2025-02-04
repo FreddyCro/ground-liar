@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.8.2
+
+修復 GA
+
 ## 0.8.1
 
 修復遺失部分 0.7.0 commit 的 bug
