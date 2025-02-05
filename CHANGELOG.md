@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.8.3
+
+gitignore 加上 dist
+
 ## 0.8.2
 
 修復 GA
