@@ -6,7 +6,7 @@ import str from '@/locales/topic1-intro.json';
 
 const root = ref<HTMLElement | null>(null);
 const heroIndicator = ref<HTMLElement | null>(null);
-const isParagraph1Show = ref(false);
+const isParagraphShow = ref(false);
 const innerHeight = window.innerHeight;
 
 onMounted(() => {
@@ -14,10 +14,18 @@ onMounted(() => {
   handleStyle();
 });
 
-function onAnchorClick(link: string) {
+function onAnchorClick(link: string, title: string) {
   // scroll to anchor smoothly
   document.querySelector(link)?.scrollIntoView({
     behavior: 'smooth',
+  });
+
+  // GA
+  window.ga('send', {
+    hitType: 'event',
+    eventCategory: 'first_screen',
+    eventAction: 'click_anchor',
+    eventLabel: title,
   });
 }
 
@@ -27,9 +35,9 @@ function handleObserver() {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        isParagraph1Show.value = false;
+        isParagraphShow.value = true;
       } else {
-        isParagraph1Show.value = true;
+        isParagraphShow.value = false;
       }
     });
   });
@@ -73,25 +81,21 @@ function handleStyle() {
         </div>
 
         <!-- p1 -->
-        <div class="ls-intro-hero__p-container">
+        <div class="ls-intro-hero__p-container ls-article">
           <div
             class="ls-intro-hero__p-wrap"
             :class="{
-              'ls-intro-hero__p-wrap--show': isParagraph1Show,
+              'ls-intro-hero__p-wrap--show': isParagraphShow,
             }"
           >
             <p class="ls-intro-hero__p">
               {{ str.introP1 }}
             </p>
-          </div>
-          <div
-            class="ls-intro-hero__p-wrap"
-            :class="{
-              'ls-intro-hero__p-wrap--show': !isParagraph1Show,
-            }"
-          >
             <p class="ls-intro-hero__p">
               {{ str.introP2 }}
+            </p>
+            <p class="ls-intro-hero__p">
+              {{ str.introP3 }}
             </p>
           </div>
         </div>
@@ -123,23 +127,29 @@ function handleStyle() {
                 title: str.introAnchor1Title,
                 desc: str.introAnchor1Desc,
                 link: '#Kaohsiung',
+                w: 362,
+                h: 250,
               },
               {
                 img: 'img/landswindlers_pic1_2',
                 title: str.introAnchor2Title,
                 desc: str.introAnchor2Desc,
                 link: '#Taichung',
+                w: 362,
+                h: 250,
               },
               {
                 img: 'img/landswindlers_pic1_3',
                 title: str.introAnchor3Title,
                 desc: str.introAnchor3Desc,
                 link: '#Tainan',
+                w: 362,
+                h: 250,
               },
             ]"
             :key="item.title"
             class="ls-intro-anchor__item"
-            @click="onAnchorClick(item.link)"
+            @click="onAnchorClick(item.link, item.title)"
           >
             <div class="ls-intro-anchor__item-header">
               <LsPic
@@ -148,6 +158,8 @@ function handleStyle() {
                 :srcset="['mob', 'pad']"
                 :use2x="true"
                 :webp="true"
+                :width="item.w"
+                :height="item.h"
               />
             </div>
             <h3 class="ls-h4 ls-intro-anchor__item-title">
@@ -242,11 +254,13 @@ function handleStyle() {
   &__title-second {
     padding: 4px 12px;
     margin: 0 25px;
-    background-color: $Y1;
+    font-size: 18px;
+    line-height: 30px;
+    background-color: rgba($color: $Y1, $alpha: 0.9);
 
     @include min-pad {
-      font-size: 20px;
-      line-height: 32px;
+      font-size: 18px;
+      line-height: 24px;
     }
   }
 
@@ -263,39 +277,50 @@ function handleStyle() {
 
   &__p-wrap {
     position: absolute;
-    left: 50%;
+    left: 0;
     width: 100%;
     display: flex;
     flex-direction: column;
-    bottom: 60px;
-    padding: 10px 20px;
+    bottom: 0;
+    padding: 60px 26px;
     opacity: 0;
     pointer-events: none;
-    background-color: rgba($color: #000000, $alpha: 0.85);
+    background-color: $B1;
     backdrop-filter: blur(10px);
-    transform: translateX(-50%);
+    transform: translate(0, 100%);
+    transition: 0.5s ease-in-out;
 
     &--show {
       opacity: 1;
+      transform: translate(0, 0);
       pointer-events: auto;
     }
 
-    @include min-pad {
-      width: 470px;
+    @include min-pc {
+      padding: 80px 26px;
+    }
+
+    p {
+      margin: 0 auto;
+
+      @include min-pad {
+        max-width: 620px;
+      }
     }
   }
 
   &__p {
-    text-align: center;
+    width: 100%;
     color: #fff;
     transition: opacity 0.15s ease-in-out;
   }
 }
 
 .ls-intro-anchor {
+  position: relative;
+  padding: 60px 20px;
   background-color: #000;
   color: $B6;
-  padding: 60px 20px;
 
   @include min-pad {
     padding: 60px 40px;
@@ -378,7 +403,7 @@ function handleStyle() {
 
     &:hover {
       .ls-intro-anchor__item-header img {
-        transform: scale(1.2);
+        transform: scale(1.1);
       }
 
       .ls-intro-anchor__item-arrow {

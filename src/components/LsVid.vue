@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, onUnmounted, ref } from 'vue';
+import { onUnmounted, ref } from 'vue';
 import { getDeviceType } from '@/utils/get-device';
 
 interface Props {
@@ -47,25 +47,22 @@ function onResize() {
   <video
     class="ls-vid"
     :class="classname || ''"
+    :src="`${VITE_ASSETS_PATH}${src[deviceType]}.mp4`"
+    type="video/mp4"
+    :poster="poster ? `${VITE_ASSETS_PATH}${poster[deviceType]}.jpg` : ''"
     playsinline
     :autoplay="autoplay"
     :loop="loop"
-    type="video/mp4"
     :muted="muted"
-    :poster="poster ? `${VITE_ASSETS_PATH}${poster[deviceType]}.jpg` : ''"
     :preload="preload"
     :aria-label="ariaLabel"
-  >
-    <source
-      :src="`${VITE_ASSETS_PATH}${src[deviceType]}.mp4`"
-      type="video/mp4"
-    />
-  </video>
+  />
 </template>
 
 <style lang="scss">
 .ls-vid {
   width: 100%;
   max-width: 100%;
+  pointer-events: none;
 }
 </style>

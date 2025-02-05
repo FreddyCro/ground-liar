@@ -35,10 +35,11 @@
     <meta property="og:site_name" content="<%= title %>" />
 
     <!-- for Twitter -->
-    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@udnNewMedia" />
     <meta name="twitter:title" content="<%= title %>" />
     <meta name="twitter:description" content="<%= description %>" />
+    <meta name="twitter:image:src" content="<%= url %><%= image %>" />
 
     <!-- for Google -->
     <link rel="canonical" href="<%= url %>" />
@@ -59,8 +60,8 @@
         },
         "url": "<%= url %>",
         "headline": "<%= title %>",
-        "datePublished": "2023-09-04 T12:00:00+08:00",
-        "dateModified": "2023-09-04 T12:00:00+08:00",
+        "datePublished": "2025-02-04 T12:00:00+08:00",
+        "dateModified": "2025-02-04 T12:00:00+08:00",
         "description": "<%= description %>",
         "articleSection": "專題報導",
         "publisher": {
@@ -119,7 +120,7 @@
     </script>
 
     <!-- Google Tag Manager -->
-    <!-- <script>
+    <script>
       (function (w, d, s, l, i) {
         w[l] = w[l] || [];
         w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
@@ -130,7 +131,7 @@
         j.src = `https://www.googletagmanager.com/gtm.js?id=${i}${dl}`;
         f.parentNode.insertBefore(j, f);
       })(window, document, "script", "dataLayer", "GTM-NLXXV9K");
-    </script> -->
+    </script>
     <!-- End Google Tag Manager -->
 
     <!-- data layer init. -->
@@ -151,14 +152,14 @@
     </noscript>
 
     <!-- Google Tag Manager (noscript) -->
-    <!-- <noscript
+    <noscript
       ><iframe
         src="https://www.googletagmanager.com/ns.html?id=GTM-NLXXV9K"
         height="0"
         width="0"
         style="display: none; visibility: hidden"
       ></iframe
-    ></noscript> -->
+    ></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
     <div id="app"></div>

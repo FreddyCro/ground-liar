@@ -12,7 +12,11 @@ import str from '@/locales/topic6-solutions.json';
         :webp="true"
         :alt="str.solutionsTitle1"
       />
-      <h2 class="ls-h3 ls-heading-title">{{ str.solutionsTitle1 }}</h2>
+      <h2 class="ls-h4 ls-heading-title ls-solutions__title">
+        <span class="ls-solutions__title-text">
+          {{ str.solutionsTitle1 }}
+        </span>
+      </h2>
     </div>
 
     <div class="ls-container ls-article">
@@ -29,6 +33,8 @@ import str from '@/locales/topic6-solutions.json';
             :srcset="['mob']"
             :webp="true"
             :alt="str.solutionsImgDesc1"
+            :width="620"
+            :height="450"
           />
           <figcaption class="ls-caption">
             {{ str.solutionsImgDesc1 }}
@@ -47,7 +53,6 @@ import str from '@/locales/topic6-solutions.json';
         <p>{{ str.solutionsSection1P2 }}</p>
         <p>{{ str.solutionsSection1P3 }}</p>
       </div>
-
       <div class="ls-subsection">
         <figure>
           <LsPic
@@ -55,6 +60,8 @@ import str from '@/locales/topic6-solutions.json';
             :srcset="['mob']"
             :webp="true"
             :alt="str.solutionsImgDesc2"
+            :width="620"
+            :height="450"
           />
           <figcaption class="ls-caption">
             {{ str.solutionsImgDesc2 }}
@@ -63,11 +70,46 @@ import str from '@/locales/topic6-solutions.json';
       </div>
       <p>{{ str.solutionsSection1P4 }}</p>
       <p>{{ str.solutionsSection1P5 }}</p>
+      <div class="ls-subsection ls-subsection--no-mb">
+        <h4 class="ls-h4">{{ str.govTitle }}</h4>
+        <p>{{ str.govP1 }}</p>
+        <p>{{ str.govP2 }}</p>
+        <p>{{ str.govP3 }}</p>
+        <p>{{ str.govP4 }}</p>
+        <p>{{ str.govP5 }}</p>
+        <p>{{ str.govP6 }}</p>
+      </div>
     </div>
   </section>
 </template>
 
 <style lang="scss">
 .ls-solutions {
+  &__title {
+    max-width: 260px;
+    color: $B3;
+    text-align: center;
+    text-shadow: none;
+
+    @include min-pad {
+      max-width: none;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      padding: 6px 20px;
+      transform: translate(-20px, -6px);
+      background-color: $Y1;
+    }
+  }
+
+  &__title-text {
+    position: relative;
+  }
 }
 </style>

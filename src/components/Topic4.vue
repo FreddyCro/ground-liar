@@ -20,7 +20,7 @@ import str from '@/locales/topic4-taichung.json';
     <LsCityHighlight
       id="kaohsiung-hl"
       :imgs="[
-        { src: 'img/landswindlers_pic4_2' },
+        { src: 'img/landswindlers_pic4_2', bg: 'black' },
         { src: 'img/landswindlers_pic4_3' },
         { src: 'img/landswindlers_pic4_4' },
         { src: 'img/landswindlers_pic4_5' },
@@ -66,6 +66,8 @@ import str from '@/locales/topic4-taichung.json';
               :srcset="['mob']"
               :webp="true"
               :alt="str.taichungSection1ImgCaption"
+              :width="620"
+              :height="450"
             />
             <figcaption class="ls-caption">
               {{ str.taichungSection1ImgCaption }}
@@ -87,11 +89,19 @@ import str from '@/locales/topic4-taichung.json';
               :srcset="['mob']"
               :webp="true"
               :alt="str.taichungSection1ImgCaption"
+              :width="620"
+              :height="450"
             />
             <figcaption class="ls-caption">
               {{ str.taichungSection2ImgCaption }}
             </figcaption>
           </figure>
+        </div>
+        <div class="ls-subsection">
+          <h4 class="ls-h4">{{ str.govTitle }}</h4>
+          <p>{{ str.govP1 }}</p>
+          <p>{{ str.govP2 }}</p>
+          <p>{{ str.govP3 }}</p>
         </div>
         <div class="ls-subsection">
           <h3 class="ls-h3">{{ str.taichungSection3Title }}</h3>
@@ -105,18 +115,31 @@ import str from '@/locales/topic4-taichung.json';
       </div>
       <div class="ls-taichung__large-chart-container">
         <div class="ls-subsection ls-subsection--no-mt">
-          <div
-            class="flourish-embed flourish-chart"
-            data-src="visualisation/20500450"
-          ></div>
+          <figure>
+            <div
+              class="flourish-embed flourish-chart"
+              data-src="visualisation/20500450"
+            ></div>
+            <figcaption class="ls-container ls-caption">
+              {{ str.taichungSection4ImgCaption }}
+            </figcaption>
+          </figure>
         </div>
       </div>
       <div class="ls-container ls-article">
         <div class="ls-subsection ls-subsection--no-mb">
-          <div
-            class="flourish-embed flourish-chart"
-            data-src="visualisation/20500490"
-          ></div>
+          <h4 class="ls-h4">{{ str.taichungSection5Title }}</h4>
+          <figure>
+            <div
+              class="flourish-embed flourish-chart"
+              data-src="visualisation/20500490"
+            ></div>
+            <figcaption class="ls-caption">
+              <div>{{ str.taichungSection5ImgCaption1 }}</div>
+              <div>{{ str.taichungSection5ImgCaption2 }}</div>
+              <div>{{ str.taichungSection5ImgCaption3 }}</div>
+            </figcaption>
+          </figure>
         </div>
       </div>
     </div>

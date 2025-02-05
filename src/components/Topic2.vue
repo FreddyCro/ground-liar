@@ -20,11 +20,11 @@ import str from '@/locales/topic2-kaohsiung.json';
     <LsCityHighlight
       id="kaohsiung-hl"
       :imgs="[
-        { src: 'img/landswindlers_pic2_2', bg: 'black' },
-        { src: 'img/landswindlers_pic2_3' },
-        { src: 'img/landswindlers_pic2_4' },
-        { src: 'img/landswindlers_pic2_5', bg: 'white' },
-        { src: 'img/landswindlers_pic2_6', bg: 'white' },
+        { src: 'img/landswindlers_pic2_2', bg: 'black', w: 720, h: 1280 },
+        { src: 'img/landswindlers_pic2_3', w: 720, h: 1280 },
+        { src: 'img/landswindlers_pic2_4', w: 720, h: 1280 },
+        { src: 'img/landswindlers_pic2_5', bg: 'gray', w: 720, h: 1280 },
+        { src: 'img/landswindlers_pic2_6', bg: 'gray', w: 720, h: 1280 },
       ]"
     >
       <template #content-1>
@@ -41,6 +41,8 @@ import str from '@/locales/topic2-kaohsiung.json';
           ext="svg"
           :use2x="false"
           :alt="str.kaoP3"
+          :width="430"
+          :height="120"
         />
       </template>
       <template #content-4>
@@ -61,16 +63,35 @@ import str from '@/locales/topic2-kaohsiung.json';
     <!-- article -->
     <div class="ls-section ls-section--no-pt">
       <div class="ls-container ls-article">
-        <h3 class="ls-h3">{{ str.landlordTitle }}</h3>
-        <p>{{ str.landlordP1 }}</p>
-        <p>{{ str.landlordP2 }}</p>
-        <p>{{ str.landlordP3 }}</p>
-        <p>{{ str.landlordP4 }}</p>
-        <p>{{ str.landlordP5 }}</p>
-        <p>{{ str.landlordP6 }}</p>
-        <p>{{ str.landlordP7 }}</p>
-        <p>{{ str.landlordP8 }}</p>
-        <p>{{ str.landlordP9 }}</p>
+        <div class="ls-subsection">
+          <h3 class="ls-h3">{{ str.landlordTitle }}</h3>
+          <p>{{ str.landlordP1 }}</p>
+          <p>{{ str.landlordP2 }}</p>
+          <p>{{ str.landlordP3 }}</p>
+          <p>{{ str.landlordP4 }}</p>
+          <p>{{ str.landlordP5 }}</p>
+          <p>{{ str.landlordP6 }}</p>
+          <p>{{ str.landlordP7 }}</p>
+          <p>{{ str.landlordP8 }}</p>
+          <p>{{ str.landlordP9 }}</p>
+        </div>
+
+        <LsPic
+          src="img/landswindlers_pic2_9"
+          :srcset="['mob']"
+          :webp="true"
+          :alt="str.roomTitle"
+          :width="620"
+          :height="450"
+        />
+
+        <div class="ls-subsection ls-subsection--no-mb">
+          <h4 class="ls-h4">{{ str.govTitle }}</h4>
+          <p>{{ str.govP1 }}</p>
+          <p>{{ str.govP2 }}</p>
+          <p>{{ str.govP3 }}</p>
+          <p>{{ str.govP4 }}</p>
+        </div>
       </div>
     </div>
   </section>

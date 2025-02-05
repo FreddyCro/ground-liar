@@ -20,10 +20,10 @@ import str from '@/locales/topic5-tainan.json';
     <LsCityHighlight
       id="kaohsiung-hl"
       :imgs="[
-        { src: 'img/landswindlers_pic5_2' },
+        { src: 'img/landswindlers_pic5_2', bg: 'black' },
         { src: 'img/landswindlers_pic5_3' },
-        { src: 'img/landswindlers_pic5_4_1' },
         { src: 'img/landswindlers_pic5_4' },
+        { src: 'img/landswindlers_pic5_4_1' },
         { src: 'img/landswindlers_pic5_5' },
       ]"
     >
@@ -78,6 +78,8 @@ import str from '@/locales/topic5-tainan.json';
               :srcset="['mob']"
               :webp="true"
               :alt="str.tainanSection1ImgDesc1"
+              :width="620"
+              :height="450"
             />
             <figcaption class="ls-caption">
               {{ str.tainanSection1ImgDesc1 }}
@@ -95,6 +97,8 @@ import str from '@/locales/topic5-tainan.json';
               :srcset="['mob']"
               :webp="true"
               :alt="str.tainanSection1ImgDesc2"
+              :width="620"
+              :height="450"
             />
             <figcaption class="ls-caption">
               {{ str.tainanSection1ImgDesc2 }}
@@ -113,15 +117,23 @@ import str from '@/locales/topic5-tainan.json';
               :srcset="['mob']"
               :webp="true"
               :alt="str.tainanSection2ImgDesc1"
+              :width="620"
+              :height="450"
             />
             <figcaption class="ls-caption">
               {{ str.tainanSection2ImgDesc1 }}
             </figcaption>
           </figure>
         </div>
-        <div class="ls-subsection ls-subsection--no-mb">
+        <div class="ls-subsection">
           <p>{{ str.tainanSection2P3 }}</p>
           <p>{{ str.tainanSection2P4 }}</p>
+        </div>
+        <div class="ls-subsection ls-subsection--no-mb">
+          <h4 class="ls-h4">{{ str.govTitle }}</h4>
+          <p>{{ str.govP1 }}</p>
+          <p>{{ str.govP2 }}</p>
+          <p>{{ str.govP3 }}</p>
         </div>
       </div>
     </div>

@@ -44,15 +44,6 @@ html {
   line-height: 150%;
 }
 
-h1,
-h3,
-h6,
-p,
-ul,
-span {
-  line-height: 150%;
-}
-
 a {
   line-height: 150%;
   text-decoration: unset;
@@ -75,6 +66,10 @@ a {
   }
 
   .ls-h3 {
+    margin-bottom: 20px;
+  }
+
+  .ls-h4 {
     margin-bottom: 20px;
   }
 
@@ -188,10 +183,10 @@ a {
 .ls-heading {
   position: relative;
   height: 300px;
-  overflow: hidden;
-  display: grid;
+  display: flex;
   align-items: center;
   align-content: center;
+  overflow: hidden;
   background-color: lightgray;
 
   @include min-pad {
@@ -214,7 +209,7 @@ a {
 
 .ls-heading-title {
   position: relative;
-  grid-area: 1 / 1 / 2 / 2;
+  margin: 0 auto;
   text-align: center;
   color: #f1f1f1;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2509803922);

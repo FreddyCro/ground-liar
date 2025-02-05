@@ -38,7 +38,8 @@ const props = defineProps({
   },
   loading: {
     type: String,
-    default: 'lazy',
+    default: 'eager',
+    // default: 'lazy',
   },
   use2x: {
     type: Boolean,
@@ -63,7 +64,7 @@ const parsedMedia = computed(() => {
   const media = [];
 
   if (props.srcset.includes('pc')) {
-    media.push('(min-width: 1024px)');
+    media.push('(min-width: 1280px)');
   }
 
   if (props.srcset.includes('pad')) {
@@ -191,5 +192,6 @@ function handleImage({ src, srcset, ext, use2x, usePrefix }) {
 .ls-pic-img {
   width: 100%;
   height: auto;
+  pointer-events: none;
 }
 </style>

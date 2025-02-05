@@ -40,6 +40,7 @@ defineProps({
   .topic2_logo_container {
     position: relative;
     height: 200vh;
+    max-height: calc(var(--init-screen-height) * 2);
 
     .topic2_logo_content {
       position: sticky;
@@ -47,6 +48,7 @@ defineProps({
       display: grid;
       width: 100%;
       height: 100vh;
+      max-height: var(--init-screen-height);
     }
 
     video {
@@ -94,9 +96,9 @@ defineProps({
       @include min-pad {
         --title-size: 180px;
         --title-line-height: 180px;
-        --subtitle-px: 30px;
+        --subtitle-px: 20px;
 
-        max-width: 388px;
+        max-width: 408px;
       }
 
       @include min-pc {
