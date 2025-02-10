@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.8.4
+
+調整 wording
+
 ## 0.8.3
 
 gitignore 加上 dist
